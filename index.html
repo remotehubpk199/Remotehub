@@ -1,549 +1,922 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Remote Hub | Smart Remotes for Smarter Living</title>
+<title>Remote Hub | Smart Remotes for Smarter Living</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+}
 
-    body {
-      background: #071827;
-      color: white;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    /* HEADER */
-    header {
-      background: #081421;
-      padding: 16px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #18344b;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+body{
+  background:#f5f7fa;
+  color:#101827;
+}
 
-    .logo {
-      font-size: 27px;
-      font-weight: 900;
-      color: #ffae00;
-      letter-spacing: 1px;
-    }
+.topbar{
+  background:#061321;
+  color:white;
+  padding:10px 6%;
+  display:flex;
+  justify-content:space-between;
+  font-size:14px;
+}
 
-    .logo span {
-      color: white;
-    }
+.topbar span{
+  color:#ffb000;
+  cursor:pointer;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 25px;
-      font-size: 15px;
-    }
+header{
+  background:#020b14;
+  color:white;
+  padding:20px 6%;
+  display:flex;
+  align-items:center;
+  gap:25px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
 
-    nav a:hover {
-      color: #ffae00;
-    }
+.logo{
+  font-size:30px;
+  font-weight:800;
+  white-space:nowrap;
+}
 
-    /* HERO */
-    .hero {
-      min-height: 580px;
-      padding: 70px 7%;
-      display: flex;
-      align-items: center;
-      background:
-        radial-gradient(circle at 80% 30%, #123c59 0%, transparent 35%),
-        linear-gradient(135deg, #061421, #0a2639);
-    }
+.logo span{
+  color:#ffb000;
+}
 
-    .hero-content {
-      max-width: 650px;
-    }
+.tagline{
+  font-size:12px;
+  color:#bfc8d2;
+  margin-top:4px;
+}
 
-    .hero small {
-      color: #ffae00;
-      font-size: 15px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+.search{
+  flex:1;
+  display:flex;
+  max-width:550px;
+  margin:auto;
+}
 
-    .hero h1 {
-      font-size: 58px;
-      line-height: 1.05;
-      margin: 18px 0;
-    }
+.search input{
+  width:100%;
+  padding:14px;
+  border:0;
+  outline:0;
+  border-radius:8px 0 0 8px;
+}
 
-    .hero h1 span {
-      color: #ffae00;
-    }
+.search button{
+  border:0;
+  background:#ffb000;
+  padding:0 20px;
+  border-radius:0 8px 8px 0;
+  font-size:18px;
+}
 
-    .hero p {
-      color: #c7d2da;
-      font-size: 18px;
-      line-height: 1.7;
-      margin-bottom: 30px;
-    }
+.whatsapp{
+  background:#20c76a;
+  color:white;
+  text-decoration:none;
+  padding:12px 17px;
+  border-radius:8px;
+  font-weight:bold;
+  white-space:nowrap;
+}
 
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+nav{
+  background:#061426;
+  padding:14px 6%;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: .3s;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .btn-primary {
-      background: #ffae00;
-      color: #071827;
-    }
+nav a:hover{
+  color:#ffb000;
+}
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: #ffc34d;
-    }
+.hero{
+  min-height:500px;
+  padding:70px 7%;
+  display:flex;
+  align-items:center;
+  color:white;
+  background:
+  radial-gradient(circle at 75% 50%,#07516f,#020b14 60%);
+}
 
-    .btn-outline {
-      border: 1px solid #ffae00;
-      color: white;
-    }
+.hero-content{
+  max-width:680px;
+}
 
-    .btn-outline:hover {
-      background: #ffae00;
-      color: #071827;
-    }
+.hero small{
+  color:#ffb000;
+  font-weight:bold;
+  letter-spacing:3px;
+}
 
-    /* SECTION */
-    section {
-      padding: 70px 7%;
-    }
+.hero h1{
+  font-size:56px;
+  line-height:1.05;
+  margin:18px 0;
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
+.hero h1 span{
+  color:#ffb000;
+}
 
-    .section-title small {
-      color: #ffae00;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+.hero p{
+  color:#d9e0e8;
+  font-size:18px;
+  line-height:1.7;
+}
 
-    .section-title h2 {
-      font-size: 36px;
-      margin-top: 10px;
-    }
+.buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
 
-    /* CATEGORIES */
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+.btn{
+  padding:15px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .category {
-      background: #0d2435;
-      border: 1px solid #193c53;
-      border-radius: 15px;
-      padding: 35px 25px;
-      text-align: center;
-      transition: .3s;
-    }
+.primary{
+  background:#ffb000;
+  color:#071827;
+}
 
-    .category:hover {
-      transform: translateY(-5px);
-      border-color: #ffae00;
-    }
+.secondary{
+  border:1px solid #ffb000;
+  color:white;
+}
 
-    .category-icon {
-      font-size: 45px;
-      margin-bottom: 18px;
-    }
+.features{
+  background:white;
+  padding:35px 7%;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
 
-    .category h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
+.feature{
+  text-align:center;
+  padding:15px;
+}
 
-    .category p {
-      color: #aebdc8;
-      line-height: 1.6;
-    }
+.feature-icon{
+  font-size:30px;
+  margin-bottom:10px;
+}
 
-    /* PRODUCTS */
-    .products {
-      background: #06131f;
-    }
+.feature p{
+  color:#687385;
+  margin-top:5px;
+  font-size:14px;
+}
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+.section{
+  padding:65px 7%;
+}
 
-    .product {
-      background: #0d2435;
-      border-radius: 15px;
-      overflow: hidden;
-      border: 1px solid #193c53;
-    }
+.title{
+  text-align:center;
+  margin-bottom:35px;
+}
 
-    .product-image {
-      height: 210px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #102d41;
-      font-size: 70px;
-    }
+.title small{
+  color:#ff9f00;
+  font-weight:bold;
+  letter-spacing:2px;
+}
 
-    .product-info {
-      padding: 22px;
-    }
+.title h2{
+  font-size:35px;
+  margin-top:8px;
+}
 
-    .product-info h3 {
-      margin-bottom: 8px;
-    }
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
 
-    .product-info p {
-      color: #aebdc8;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 18px;
-    }
+.category{
+  background:white;
+  padding:35px 20px;
+  text-align:center;
+  border-radius:14px;
+  box-shadow:0 5px 25px rgba(0,0,0,.07);
+  cursor:pointer;
+  transition:.3s;
+}
 
-    /* WHY US */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+.category:hover{
+  transform:translateY(-5px);
+}
 
-    .why {
-      text-align: center;
-      padding: 25px 15px;
-      background: #0d2435;
-      border-radius: 12px;
-    }
+.category .icon{
+  font-size:45px;
+  margin-bottom:15px;
+}
 
-    .why strong {
-      display: block;
-      color: #ffae00;
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
+.category p{
+  color:#687385;
+  margin-top:8px;
+  font-size:14px;
+}
 
-    /* CONTACT */
-    .contact {
-      background: linear-gradient(135deg, #0b2233, #071827);
-      text-align: center;
-    }
+.product-tools{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
 
-    .contact h2 {
-      font-size: 38px;
-      margin-bottom: 15px;
-    }
+.filter-btn{
+  border:1px solid #d8dee6;
+  background:white;
+  padding:10px 18px;
+  border-radius:20px;
+  cursor:pointer;
+}
 
-    .contact p {
-      color: #c0ccd4;
-      margin-bottom: 25px;
-      line-height: 1.7;
-    }
+.filter-btn.active,
+.filter-btn:hover{
+  background:#ffb000;
+  border-color:#ffb000;
+}
 
-    /* FOOTER */
-    footer {
-      background: #050e16;
-      text-align: center;
-      padding: 28px 15px;
-      color: #8796a1;
-      font-size: 14px;
-    }
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+}
 
-    footer strong {
-      color: #ffae00;
-    }
+.product{
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 5px 25px rgba(0,0,0,.07);
+  transition:.3s;
+}
 
-    /* MOBILE */
-    @media (max-width: 800px) {
+.product:hover{
+  transform:translateY(-5px);
+}
 
-      nav {
-        display: none;
-      }
+.product-image{
+  height:230px;
+  background:#edf1f5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
 
-      .hero {
-        min-height: 520px;
-        padding: 60px 6%;
-      }
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
 
-      .hero h1 {
-        font-size: 42px;
-      }
+.product-info{
+  padding:18px;
+}
 
-      .hero p {
-        font-size: 16px;
-      }
+.product-info h3{
+  margin-bottom:8px;
+}
 
-      .categories,
-      .product-grid {
-        grid-template-columns: 1fr;
-      }
+.product-info p{
+  color:#687385;
+  font-size:14px;
+  min-height:40px;
+}
 
-      .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+.price{
+  font-size:20px;
+  font-weight:bold;
+  margin:15px 0;
+}
 
-      section {
-        padding: 55px 6%;
-      }
+.order{
+  display:block;
+  text-align:center;
+  background:#20c76a;
+  color:white;
+  padding:12px;
+  border-radius:7px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-      .section-title h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
+.about{
+  background:#071827;
+  color:white;
+}
+
+.about-content{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+}
+
+.about p{
+  color:#cbd5df;
+  line-height:1.8;
+  margin-top:15px;
+}
+
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.contact-card{
+  background:white;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 5px 25px rgba(0,0,0,.07);
+}
+
+.contact-card a{
+  display:block;
+  color:#071827;
+  text-decoration:none;
+  margin:15px 0;
+}
+
+.social{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+.social a{
+  background:#071827;
+  color:white;
+  padding:10px 15px;
+  border-radius:7px;
+}
+
+footer{
+  background:#020b14;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+.float-whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#20c76a;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:27px;
+  text-decoration:none;
+  z-index:999;
+}
+
+@media(max-width:900px){
+
+  header{
+    flex-wrap:wrap;
+  }
+
+  .search{
+    order:3;
+    flex-basis:100%;
+    max-width:none;
+  }
+
+  .features,
+  .categories,
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .topbar{
+    font-size:11px;
+  }
+
+  header{
+    padding:15px 4%;
+  }
+
+  .logo{
+    font-size:25px;
+  }
+
+  nav{
+    gap:15px;
+    font-size:13px;
+  }
+
+  .hero{
+    padding:55px 6%;
+  }
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .features,
+  .categories,
+  .products,
+  .contact{
+    grid-template-columns:1fr;
+  }
+
+  .section{
+    padding:50px 5%;
+  }
+
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
+<div class="topbar">
+  <div>🚚 Cash on Delivery Available in Karachi</div>
+
+  <div>
+    <span onclick="setLanguage('en')">English</span>
+    |
+    <span onclick="setLanguage('ur')">اردو</span>
+  </div>
+</div>
+
+<header>
+
+  <div>
     <div class="logo">
-      Remote<span>Hub</span>
+      Remote<span>hub</span>
     </div>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#categories">Categories</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-
-      <small>SMART REMOTES FOR SMARTER LIVING</small>
-
-      <h1>
-        The Right Remote.<br>
-        <span>Every Time.</span>
-      </h1>
-
-      <p>
-        Premium replacement remotes for AC, LED, Smart TV
-        and other electronic devices. Find the right remote
-        for your device at Remote Hub.
-      </p>
-
-      <div class="buttons">
-        <a class="btn btn-primary"
-           href="https://wa.me/923072335550">
-          Order on WhatsApp
-        </a>
-
-        <a class="btn btn-outline"
-           href="#products">
-          View Remotes
-        </a>
-      </div>
-
+    <div class="tagline">
+      Smart Remotes for Smarter Living
     </div>
-  </section>
+  </div>
 
+  <div class="search">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search for remotes..."
+      onkeyup="searchProducts()"
+    >
+    <button>🔍</button>
+  </div>
 
-  <!-- CATEGORIES -->
-  <section id="categories">
+  <a
+    class="whatsapp"
+    href="https://wa.me/923072335550"
+    target="_blank"
+  >
+    💬 WhatsApp
+  </a>
 
-    <div class="section-title">
-      <small>SHOP BY CATEGORY</small>
-      <h2>Find Your Remote</h2>
-    </div>
+</header>
 
-    <div class="categories">
+<nav>
+  <a href="#home">Home</a>
+  <a href="#categories">Categories</a>
+  <a href="#products">Products</a>
+  <a href="#about">About Us</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-      <div class="category">
-        <div class="category-icon">❄️</div>
-        <h3>AC Remotes</h3>
-        <p>
-          Replacement remotes for inverter and
-          non-inverter air conditioners.
-        </p>
-      </div>
+<section class="hero" id="home">
 
-      <div class="category">
-        <div class="category-icon">📺</div>
-        <h3>TV Remotes</h3>
-        <p>
-          LED, LCD and Smart TV replacement
-          remotes for popular brands.
-        </p>
-      </div>
+  <div class="hero-content">
 
-      <div class="category">
-        <div class="category-icon">🎮</div>
-        <h3>Smart Remotes</h3>
-        <p>
-          Android TV, TV Box and smart device
-          replacement remotes.
-        </p>
-      </div>
+    <small>REMOTE HUB</small>
 
-    </div>
-  </section>
-
-
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
-
-    <div class="section-title">
-      <small>FEATURED PRODUCTS</small>
-      <h2>Popular Remotes</h2>
-    </div>
-
-    <div class="product-grid">
-
-      <div class="product">
-        <div class="product-image">❄️</div>
-
-        <div class="product-info">
-          <h3>AC Inverter Remote</h3>
-
-          <p>
-            Quality replacement remote for
-            compatible inverter AC models.
-          </p>
-
-          <a class="btn btn-primary"
-             href="https://wa.me/923072335550">
-            Ask Price
-          </a>
-        </div>
-      </div>
-
-
-      <div class="product">
-        <div class="product-image">📺</div>
-
-        <div class="product-info">
-          <h3>Smart LED Remote</h3>
-
-          <p>
-            Easy-to-use replacement remote
-            for compatible Smart LED TVs.
-          </p>
-
-          <a class="btn btn-primary"
-             href="https://wa.me/923072335550">
-            Ask Price
-          </a>
-        </div>
-      </div>
-
-
-      <div class="product">
-        <div class="product-image">🎮</div>
-
-        <div class="product-info">
-          <h3>Android Box Remote</h3>
-
-          <p>
-            Replacement remote for compatible
-            Android TV boxes and smart devices.
-          </p>
-
-          <a class="btn btn-primary"
-             href="https://wa.me/923072335550">
-            Ask Price
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- WHY US -->
-  <section>
-
-    <div class="section-title">
-      <small>WHY REMOTE HUB</small>
-      <h2>Why Choose Us?</h2>
-    </div>
-
-    <div class="why-grid">
-
-      <div class="why">
-        <strong>01</strong>
-        Quality Products
-      </div>
-
-      <div class="why">
-        <strong>02</strong>
-        Wide Compatibility
-      </div>
-
-      <div class="why">
-        <strong>03</strong>
-        Expert Guidance
-      </div>
-
-      <div class="why">
-        <strong>04</strong>
-        Easy Ordering
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-
-    <h2>Need the Right Remote?</h2>
+    <h1>
+      Smart Remotes for
+      <span>Smarter Living</span>
+    </h1>
 
     <p>
-      Send us your AC or TV model number and
-      we'll help you find the compatible remote.
+      Premium replacement remotes for TVs, ACs,
+      Android Boxes and smart devices.
+      Find your remote and order easily through WhatsApp.
     </p>
 
-    <div class="buttons" style="justify-content:center;">
+    <div class="buttons">
 
-      <a class="btn btn-primary"
-         href="https://wa.me/923072335550">
-        WhatsApp Us
+      <a class="btn primary" href="#products">
+        🛒 Shop Remotes
       </a>
 
-      <a class="btn btn-outline"
-         href="tel:+923072335550">
-        Call Now
+      <a
+        class="btn secondary"
+        href="https://wa.me/923072335550"
+        target="_blank"
+      >
+        💬 Order on WhatsApp
       </a>
 
     </div>
 
-  </section>
+  </div>
 
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 <strong>Remote Hub</strong> — Smart Remotes for Smarter Living
-  </footer>
+<section class="features">
+
+  <div class="feature">
+    <div class="feature-icon">✓</div>
+    <h3>Quality Products</h3>
+    <p>Reliable replacement remotes.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">📺</div>
+    <h3>Wide Compatibility</h3>
+    <p>Remotes for multiple brands.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">🚚</div>
+    <h3>Fast Delivery</h3>
+    <p>Delivery available in Karachi.</p>
+  </div>
+
+  <div class="feature">
+    <div class="feature-icon">💵</div>
+    <h3>Cash on Delivery</h3>
+    <p>Easy payment in Karachi.</p>
+  </div>
+
+</section>
+
+<section class="section" id="categories">
+
+  <div class="title">
+    <small>SHOP BY CATEGORY</small>
+    <h2>Find Your Remote</h2>
+  </div>
+
+  <div class="categories">
+
+    <div class="category" onclick="filterCategory('AC')">
+      <div class="icon">❄️</div>
+      <h3>AC Remotes</h3>
+      <p>AC replacement remotes</p>
+    </div>
+
+    <div class="category" onclick="filterCategory('TV')">
+      <div class="icon">📺</div>
+      <h3>TV Remotes</h3>
+      <p>Smart LED & TV remotes</p>
+    </div>
+
+    <div class="category" onclick="filterCategory('Android')">
+      <div class="icon">📦</div>
+      <h3>Android Box</h3>
+      <p>Android TV box remotes</p>
+    </div>
+
+    <div class="category" onclick="filterCategory('Universal')">
+      <div class="icon">🎮</div>
+      <h3>Universal</h3>
+      <p>Universal replacement remotes</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="products">
+
+  <div class="title">
+    <small>OUR COLLECTION</small>
+    <h2>All Remotes</h2>
+  </div>
+
+  <div class="product-tools">
+
+    <button class="filter-btn active"
+    onclick="showAll()">
+      All
+    </button>
+
+    <button class="filter-btn"
+    onclick="filterCategory('AC')">
+      AC
+    </button>
+
+    <button class="filter-btn"
+    onclick="filterCategory('TV')">
+      TV
+    </button>
+
+    <button class="filter-btn"
+    onclick="filterCategory('Android')">
+      Android Box
+    </button>
+
+    <button class="filter-btn"
+    onclick="filterCategory('Universal')">
+      Universal
+    </button>
+
+  </div>
+
+  <div class="products" id="productGrid"></div>
+
+</section>
+
+<section class="section about" id="about">
+
+  <div class="about-content">
+
+    <div class="title">
+      <small>ABOUT REMOTE HUB</small>
+      <h2>Smart Remotes for Smarter Living</h2>
+    </div>
+
+    <p>
+      Remote Hub provides quality replacement remotes
+      for TVs, air conditioners, Android boxes and
+      other smart devices.
+    </p>
+
+    <p>
+      Our goal is to make finding and ordering the
+      right remote simple and convenient.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="section" id="contact">
+
+  <div class="title">
+    <small>GET IN TOUCH</small>
+    <h2>Contact Remote Hub</h2>
+  </div>
+
+  <div class="contact">
+
+    <div class="contact-card">
+
+      <h3>Contact Information</h3>
+
+      <a href="https://wa.me/923072335550" target="_blank">
+        💬 WhatsApp: 0307 2335550
+      </a>
+
+      <a href="tel:03072335550">
+        📞 Call: 0307 2335550
+      </a>
+
+      <a
+        href="https://maps.app.goo.gl/C5AiUd2NSUh5kTGy6?g_st=ac"
+        target="_blank"
+      >
+        📍 Visit Our Store
+      </a>
+
+      <div class="social">
+
+        <a
+          href="https://www.instagram.com/the_remote_hub?igsh=MTlpZThnNGFnaXIxeg=="
+          target="_blank"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/1CNRKNpg5H/"
+          target="_blank"
+        >
+          Facebook
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="contact-card">
+
+      <h3>Need Help Finding a Remote?</h3>
+
+      <p style="color:#687385;line-height:1.7;">
+        Send us your TV or AC model number on WhatsApp.
+        We can help you find the compatible remote.
+      </p>
+
+      <br>
+
+      <a
+        class="order"
+        href="https://wa.me/923072335550?text=Assalam-o-Alaikum%2C%20mujhe%20remote%20find%20karne%20mein%20help%20chahiye."
+        target="_blank"
+      >
+        💬 Ask on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>© 2026 Remote Hub. All Rights Reserved.</p>
+
+  <p style="margin-top:8px;color:#9ca8b5;">
+    Smart Remotes for Smarter Living
+  </p>
+
+</footer>
+
+<a
+  class="float-whatsapp"
+  href="https://wa.me/923072335550"
+  target="_blank"
+>
+  💬
+</a>
+
+<script src="products.js"></script>
+
+<script>
+
+function renderProducts(list = products){
+
+  const grid = document.getElementById("productGrid");
+
+  grid.innerHTML = "";
+
+  if(list.length === 0){
+
+    grid.innerHTML =
+      "<p style='grid-column:1/-1;text-align:center;padding:40px;'>No products found.</p>";
+
+    return;
+  }
+
+  list.forEach(product => {
+
+    const message =
+      "Assalam-o-Alaikum, mujhe " +
+      product.name +
+      " chahiye.";
+
+    grid.innerHTML += `
+
+      <div class="product"
+      data-category="${product.category}">
+
+        <div class="product-image">
+
+          <img
+          src="${product.image}"
+          alt="${product.name}"
+          onerror="this.style.display='none';this.parentElement.innerHTML='📺';"
+          >
+
+        </div>
+
+        <div class="product-info">
+
+          <h3>${product.name}</h3>
+
+          <p>${product.description}</p>
+
+          <div class="price">
+            ${product.price}
+          </div>
+
+          <a
+          class="order"
+          href="https://wa.me/923072335550?text=${encodeURIComponent(message)}"
+          target="_blank">
+
+            💬 Order on WhatsApp
+
+          </a>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
+}
+
+function searchProducts(){
+
+  const search =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+  const results =
+    products.filter(product =>
+
+      product.name.toLowerCase().includes(search) ||
+      product.category.toLowerCase().includes(search) ||
+      product.description.toLowerCase().includes(search)
+
+    );
+
+  renderProducts(results);
+
+}
+
+function filterCategory(category){
+
+  const results =
+    products.filter(product =>
+      product.category === category
+    );
+
+  renderProducts(results);
+
+  document
+  .getElementById("products")
+  .scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+function showAll(){
+
+  renderProducts(products);
+
+}
+
+function setLanguage(language){
+
+  if(language === "ur"){
+
+    alert(
+      "اردو زبان کا آپشن منتخب کیا گیا ہے۔"
+    );
+
+  }else{
+
+    alert(
+      "English language selected."
+    );
+
+  }
+
+}
+
+renderProducts();
+
+</script>
 
 </body>
-          </html>
+</html>
