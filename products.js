@@ -4,7 +4,7 @@ const products = [
     name: "Gree YAN1F1 AC Remote",
     category: "AC",
     price: "Rs. 1,499",
-    image: "gree-yan1f1.jpg",
+    image: "1786796273077.png",
     description: "Replacement remote for compatible Gree inverter AC models."
   },
 
