@@ -1,27 +1,52 @@
-const products = [
+const SHEET_ID = "1wEFesmyYm898huJec2X0LlWfq-fUqp4pOT7LoeyKQnQ";
+const SHEET_NAME = "Sheet1";
 
-  {
-    name: "Gree YAN1F1 AC Remote",
-    category: "AC",
-    price: "Rs. 1,499",
-    image: "https://raw.githubusercontent.com/remotehubpk199/Remotehub/main/1786796273077.png",
-    description: "Replacement remote for compatible Gree inverter AC models."
-  },
+let products = [];
 
-  {
-    name: "TCL Smart LED Remote",
-    category: "TV",
-    price: "Rs. 1,299",
-    image: "images/tcl-smart.jpg",
-    description: "Smart LED TV replacement remote."
-  },
+async function loadProducts() {
 
-  {
-    name: "Android Box Remote",
-    category: "Android",
-    price: "Rs. 999",
-    image: "images/android-box.jpg",
-    description: "Replacement remote for compatible Android TV boxes."
+  try {
+
+    const url =
+      `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
+
+    const response = await fetch(url);
+    const text = await response.text();
+
+    const jsonText = text.substring(
+      text.indexOf("{"),
+      text.lastIndexOf("}") + 1
+    );
+
+    const data = JSON.parse(jsonText);
+
+    const rows = data.table.rows;
+
+    products = rows.map(row => {
+
+      const cells = row.c.map(cell =>
+        cell && cell.v !== undefined ? cell.v : ""
+      );
+
+      return {
+        name: cells[0] || "",
+        category: cells[1] || "",
+        price: cells[2] ? "Rs. " + cells[2] : "",
+        image: cells[3] || "",
+        description: cells[4] || ""
+      };
+
+    }).filter(product => product.name);
+
+    renderProducts(products);
+
+  } catch (error) {
+
+    console.error("Google Sheet Error:", error);
+
+    document.getElementById("productGrid").innerHTML =
+      "<p style='grid-column:1/-1;text-align:center;padding:40px;'>Products could not be loaded.</p>";
+
   }
 
-];
+}
