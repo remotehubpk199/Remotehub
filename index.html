@@ -3,484 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Remote Hub | Smart Remotes for Smarter Living</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Arial,Helvetica,sans-serif;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#f5f7fa;
-  color:#101827;
-}
-
-.topbar{
-  background:#061321;
-  color:white;
-  padding:10px 6%;
-  display:flex;
-  justify-content:space-between;
-  font-size:14px;
-}
-
-.topbar span{
-  color:#ffb000;
-  cursor:pointer;
-}
-
-header{
-  background:#020b14;
-  color:white;
-  padding:20px 6%;
-  display:flex;
-  align-items:center;
-  gap:25px;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.logo{
-  font-size:30px;
-  font-weight:800;
-  white-space:nowrap;
-}
-
-.logo span{
-  color:#ffb000;
-}
-
-.tagline{
-  font-size:12px;
-  color:#bfc8d2;
-  margin-top:4px;
-}
-
-.search{
-  flex:1;
-  display:flex;
-  max-width:550px;
-  margin:auto;
-}
-
-.search input{
-  width:100%;
-  padding:14px;
-  border:0;
-  outline:0;
-  border-radius:8px 0 0 8px;
-}
-
-.search button{
-  border:0;
-  background:#ffb000;
-  padding:0 20px;
-  border-radius:0 8px 8px 0;
-  font-size:18px;
-}
-
-.whatsapp{
-  background:#20c76a;
-  color:white;
-  text-decoration:none;
-  padding:12px 17px;
-  border-radius:8px;
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-nav{
-  background:#061426;
-  padding:14px 6%;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-nav a:hover{
-  color:#ffb000;
-}
-
-.hero{
-  min-height:500px;
-  padding:70px 7%;
-  display:flex;
-  align-items:center;
-  color:white;
-  background:radial-gradient(circle at 75% 50%,#07516f,#020b14 60%);
-}
-
-.hero-content{
-  max-width:680px;
-}
-
-.hero small{
-  color:#ffb000;
-  font-weight:bold;
-  letter-spacing:3px;
-}
-
-.hero h1{
-  font-size:56px;
-  line-height:1.05;
-  margin:18px 0;
-}
-
-.hero h1 span{
-  color:#ffb000;
-}
-
-.hero p{
-  color:#d9e0e8;
-  font-size:18px;
-  line-height:1.7;
-}
-
-.buttons{
-  margin-top:30px;
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:15px 25px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.primary{
-  background:#ffb000;
-  color:#071827;
-}
-
-.secondary{
-  border:1px solid #ffb000;
-  color:white;
-}
-
-.features{
-  background:white;
-  padding:35px 7%;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.feature{
-  text-align:center;
-  padding:15px;
-}
-
-.feature-icon{
-  font-size:30px;
-  margin-bottom:10px;
-}
-
-.feature p{
-  color:#687385;
-  margin-top:5px;
-  font-size:14px;
-}
-
-.section{
-  padding:65px 7%;
-}
-
-.title{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.title small{
-  color:#ff9f00;
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.title h2{
-  font-size:35px;
-  margin-top:8px;
-}
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.category{
-  background:white;
-  padding:35px 20px;
-  text-align:center;
-  border-radius:14px;
-  box-shadow:0 5px 25px rgba(0,0,0,.07);
-  cursor:pointer;
-  transition:.3s;
-}
-
-.category:hover{
-  transform:translateY(-5px);
-}
-
-.category .icon{
-  font-size:45px;
-  margin-bottom:15px;
-}
-
-.category p{
-  color:#687385;
-  margin-top:8px;
-  font-size:14px;
-}
-
-.product-tools{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:30px;
-}
-
-.filter-btn{
-  border:1px solid #d8dee6;
-  background:white;
-  padding:10px 18px;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-.filter-btn.active,
-.filter-btn:hover{
-  background:#ffb000;
-  border-color:#ffb000;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:22px;
-}
-
-.product{
-  background:white;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 5px 25px rgba(0,0,0,.07);
-  transition:.3s;
-}
-
-.product:hover{
-  transform:translateY(-5px);
-}
-
-/* 3 Image Slider Styling */
-.product-image{
-  height:230px;
-  background:#edf1f5;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.product-image img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:none;
-}
-
-.product-image img.active{
-  display:block;
-}
-
-.slider-btn{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:rgba(0,0,0,0.4);
-  color:white;
-  border:none;
-  padding:8px 11px;
-  cursor:pointer;
-  border-radius:50%;
-  font-size:14px;
-  font-weight:bold;
-  z-index:10;
-  transition:background 0.2s;
-}
-
-.slider-btn:hover{
-  background:rgba(0,0,0,0.8);
-}
-
-.prev-btn{
-  left:8px;
-}
-
-.next-btn{
-  right:8px;
-}
-
-.dots-container{
-  position:absolute;
-  bottom:8px;
-  display:flex;
-  gap:5px;
-}
-
-.dot{
-  width:8px;
-  height:8px;
-  background:rgba(255,255,255,0.5);
-  border-radius:50%;
-}
-
-.dot.active{
-  background:#ffb000;
-}
-
-.product-info{
-  padding:18px;
-}
-
-.product-info h3{
-  margin-bottom:8px;
-}
-
-.product-info p{
-  color:#687385;
-  font-size:14px;
-  min-height:40px;
-  line-height:1.4;
-  margin-bottom:12px;
-}
-
-.price{
-  font-size:20px;
-  font-weight:bold;
-  margin:15px 0;
-}
-
-.order{
-  display:block;
-  text-align:center;
-  background:#20c76a;
-  color:white;
-  padding:12px;
-  border-radius:7px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.about{
-  background:#071827;
-  color:white;
-}
-
-.about-content{
-  max-width:850px;
-  margin:auto;
-  text-align:center;
-}
-
-.about p{
-  color:#cbd5df;
-  line-height:1.8;
-  margin-top:15px;
-}
-
-.contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-
-.contact-card{
-  background:white;
-  padding:30px;
-  border-radius:14px;
-  box-shadow:0 5px 25px rgba(0,0,0,.07);
-}
-
-.contact-card a{
-  display:block;
-  color:#071827;
-  text-decoration:none;
-  margin:15px 0;
-}
-
-.social{
-  display:flex;
-  gap:10px;
-  margin-top:20px;
-}
-
-.social a{
-  background:#071827;
-  color:white;
-  padding:10px 15px;
-  border-radius:7px;
-}
-
-footer{
-  background:#020b14;
-  color:white;
-  text-align:center;
-  padding:25px;
-}
-
-.float-whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#20c76a;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:27px;
-  text-decoration:none;
-  z-index:999;
-}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#f5f7fa;color:#101827;}
+.topbar{background:#061321;color:white;padding:10px 6%;display:flex;justify-content:space-between;font-size:14px;}
+.topbar span{color:#ffb000;cursor:pointer;}
+header{background:#020b14;color:white;padding:20px 6%;display:flex;align-items:center;gap:25px;position:sticky;top:0;z-index:1000;}
+.logo{font-size:30px;font-weight:800;white-space:nowrap;}
+.logo span{color:#ffb000;}
+.tagline{font-size:12px;color:#bfc8d2;margin-top:4px;}
+.search{flex:1;display:flex;max-width:550px;margin:auto;}
+.search input{width:100%;padding:14px;border:0;outline:0;border-radius:8px 0 0 8px;}
+.search button{border:0;background:#ffb000;padding:0 20px;border-radius:0 8px 8px 0;font-size:18px;}
+.whatsapp{background:#20c76a;color:white;text-decoration:none;padding:12px 17px;border-radius:8px;font-weight:bold;white-space:nowrap;}
+nav{background:#061426;padding:14px 6%;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;}
+nav a{color:white;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#ffb000;}
+.hero{min-height:500px;padding:70px 7%;display:flex;align-items:center;color:white;background:radial-gradient(circle at 75% 50%,#07516f,#020b14 60%);}
+.hero-content{max-width:680px;}
+.hero small{color:#ffb000;font-weight:bold;letter-spacing:3px;}
+.hero h1{font-size:56px;line-height:1.05;margin:18px 0;}
+.hero h1 span{color:#ffb000;}
+.hero p{color:#d9e0e8;font-size:18px;line-height:1.7;}
+.buttons{margin-top:30px;display:flex;gap:15px;flex-wrap:wrap;}
+.btn{padding:15px 25px;border-radius:8px;text-decoration:none;font-weight:bold;}
+.primary{background:#ffb000;color:#071827;}
+.secondary{border:1px solid #ffb000;color:white;}
+.features{background:white;padding:35px 7%;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.feature{text-align:center;padding:15px;}
+.feature-icon{font-size:30px;margin-bottom:10px;}
+.feature p{color:#687385;margin-top:5px;font-size:14px;}
+.section{padding:65px 7%;}
+.title{text-align:center;margin-bottom:35px;}
+.title small{color:#ff9f00;font-weight:bold;letter-spacing:2px;}
+.title h2{font-size:35px;margin-top:8px;}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.category{background:white;padding:35px 20px;text-align:center;border-radius:14px;box-shadow:0 5px 25px rgba(0,0,0,.07);cursor:pointer;transition:.3s;}
+.category:hover{transform:translateY(-5px);}
+.category .icon{font-size:45px;margin-bottom:15px;}
+.category p{color:#687385;margin-top:8px;font-size:14px;}
+.product-tools{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px;}
+.filter-btn{border:1px solid #d8dee6;background:white;padding:10px 18px;border-radius:20px;cursor:pointer;}
+.filter-btn.active,.filter-btn:hover{background:#ffb000;border-color:#ffb000;}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+.product{background:white;border-radius:14px;overflow:hidden;box-shadow:0 5px 25px rgba(0,0,0,.07);transition:.3s;}
+.product:hover{transform:translateY(-5px);}
+
+/* 3-Image Slider CSS */
+.product-image{height:230px;background:#edf1f5;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.product-image img{width:100%;height:100%;object-fit:contain;display:none;}
+.product-image img.active{display:block;}
+.slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.4);color:white;border:none;padding:8px 11px;cursor:pointer;border-radius:50%;font-size:14px;font-weight:bold;z-index:10;transition:background 0.2s;}
+.slider-btn:hover{background:rgba(0,0,0,0.8);}
+.prev-btn{left:8px;}
+.next-btn{right:8px;}
+.dots-container{position:absolute;bottom:8px;display:flex;gap:5px;}
+.dot{width:8px;height:8px;background:rgba(255,255,255,0.5);border-radius:50%;}
+.dot.active{background:#ffb000;}
+
+.product-info{padding:18px;}
+.product-info h3{margin-bottom:8px;}
+.product-info p{color:#687385;font-size:14px;min-height:40px;line-height:1.4;margin-bottom:12px;}
+.price{font-size:20px;font-weight:bold;margin:15px 0;}
+.order{display:block;text-align:center;background:#20c76a;color:white;padding:12px;border-radius:7px;text-decoration:none;font-weight:bold;}
+.about{background:#071827;color:white;}
+.about-content{max-width:850px;margin:auto;text-align:center;}
+.about p{color:#cbd5df;line-height:1.8;margin-top:15px;}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+.contact-card{background:white;padding:30px;border-radius:14px;box-shadow:0 5px 25px rgba(0,0,0,.07);}
+.contact-card a{display:block;color:#071827;text-decoration:none;margin:15px 0;}
+.social{display:flex;gap:10px;margin-top:20px;}
+.social a{background:#071827;color:white;padding:10px 15px;border-radius:7px;}
+footer{background:#020b14;color:white;text-align:center;padding:25px;}
+.float-whatsapp{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:#20c76a;color:white;display:flex;justify-content:center;align-items:center;font-size:27px;text-decoration:none;z-index:999;}
 
 @media(max-width:900px){
-  header{ flex-wrap:wrap; }
-  .search{ order:3; flex-basis:100%; max-width:none; }
-  .features, .categories, .products{ grid-template-columns:repeat(2,1fr); }
+  header{flex-wrap:wrap;}
+  .search{order:3;flex-basis:100%;max-width:none;}
+  .features,.categories,.products{grid-template-columns:repeat(2,1fr);}
 }
-
 @media(max-width:600px){
-  .topbar{ font-size:11px; }
-  header{ padding:15px 4%; }
-  .logo{ font-size:25px; }
-  nav{ gap:15px; font-size:13px; }
-  .hero{ padding:55px 6%; }
-  .hero h1{ font-size:39px; }
-  .features, .categories, .products, .contact{ grid-template-columns:1fr; }
-  .section{ padding:50px 5%; }
+  .topbar{font-size:11px;}
+  header{padding:15px 4%;}
+  .logo{font-size:25px;}
+  nav{gap:15px;font-size:13px;}
+  .hero{padding:55px 6%;}
+  .hero h1{font-size:39px;}
+  .features,.categories,.products,.contact{grid-template-columns:1fr;}
+  .section{padding:50px 5%;}
 }
 </style>
 </head>
@@ -490,39 +103,22 @@ footer{
 <div class="topbar">
   <div>🚚 Cash on Delivery Available in Karachi</div>
   <div>
-    <span onclick="setLanguage('en')">English</span>
-    |
-    <span onclick="setLanguage('ur')">اردو</span>
+    <span onclick="setLanguage('en')">English</span> | <span onclick="setLanguage('ur')">اردو</span>
   </div>
 </div>
 
 <header>
   <div>
-    <div class="logo">
-      Remote<span>hub</span>
-    </div>
-    <div class="tagline">
-      Smart Remotes for Smarter Living
-    </div>
+    <div class="logo">Remote<span>hub</span></div>
+    <div class="tagline">Smart Remotes for Smarter Living</div>
   </div>
 
   <div class="search">
-    <input
-      id="searchInput"
-      type="text"
-      placeholder="Search for remotes..."
-      onkeyup="searchProducts()"
-    >
+    <input id="searchInput" type="text" placeholder="Search for remotes..." onkeyup="searchProducts()">
     <button>🔍</button>
   </div>
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/923072335550"
-    target="_blank"
-  >
-    💬 WhatsApp
-  </a>
+  <a class="whatsapp" href="https://wa.me/923072335550" target="_blank">💬 WhatsApp</a>
 </header>
 
 <nav>
@@ -537,11 +133,7 @@ footer{
   <div class="hero-content">
     <small>REMOTE HUB</small>
     <h1>Smart Remotes for <span>Smarter Living</span></h1>
-    <p>
-      Premium replacement remotes for TVs, ACs,
-      Android Boxes and smart devices.
-      Find your remote and order easily through WhatsApp.
-    </p>
+    <p>Premium replacement remotes for TVs, ACs, Android Boxes and smart devices. Find your remote and order easily through WhatsApp.</p>
     <div class="buttons">
       <a class="btn primary" href="#products">🛒 Shop Remotes</a>
       <a class="btn secondary" href="https://wa.me/923072335550" target="_blank">💬 Order on WhatsApp</a>
@@ -576,14 +168,14 @@ footer{
   </div>
 
   <div class="product-tools">
-    <button class="filter-btn active" onclick="showAll()">All</button>
-    <button class="filter-btn" onclick="filterCategory('AC')">AC</button>
-    <button class="filter-btn" onclick="filterCategory('TV')">TV</button>
-    <button class="filter-btn" onclick="filterCategory('Android')">Android Box</button>
-    <button class="filter-btn" onclick="filterCategory('Universal')">Universal</button>
+    <button class="filter-btn active" onclick="showAll(this)">All</button>
+    <button class="filter-btn" onclick="filterCategory('AC', this)">AC</button>
+    <button class="filter-btn" onclick="filterCategory('TV', this)">TV</button>
+    <button class="filter-btn" onclick="filterCategory('Android', this)">Android Box</button>
+    <button class="filter-btn" onclick="filterCategory('Universal', this)">Universal</button>
   </div>
 
-  <div class="products" id="productGrid"></div>
+  <div class="products" id="productGrid">Loading products from Google Sheet...</div>
 </section>
 
 <section class="section about" id="about">
@@ -630,15 +222,101 @@ footer{
 
 <a class="float-whatsapp" href="https://wa.me/923072335550" target="_blank">💬</a>
 
-<!-- Script File Integration -->
-<script src="products.js"></script>
-
 <script>
-function renderProducts(list = products){
+// AAP KI GOOGLE SHEET KA DIRECT CSV LINK YAHAN SET KAR DIYA GAYA HAI
+const sheetCsvUrl = "https://docs.google.com/spreadsheets/d/1wEFesmyYm898huJec2X0LlWfq-fUqp4pOT7LoeyKQnQ/export?format=csv";
+
+let products = [];
+
+function parseCSV(text) {
+  let lines = [];
+  let row = [];
+  let current = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i++) {
+    let char = text[i];
+    let nextChar = text[i+1];
+
+    if (char === '"') {
+      if (inQuotes && nextChar === '"') {
+        current += '"';
+        i++;
+      } else {
+        inQuotes = !inQuotes;
+      }
+    } else if (char === ',' && !inQuotes) {
+      row.push(current.trim());
+      current = '';
+    } else if ((char === '\r' || char === '\n') && !inQuotes) {
+      if (char === '\r' && nextChar === '\n') i++;
+      row.push(current.trim());
+      if (row.length > 1 || row[0] !== '') lines.push(row);
+      row = [];
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  if (current || row.length > 0) {
+    row.push(current.trim());
+    lines.push(row);
+  }
+  return lines;
+}
+
+function fetchProductsFromSheet() {
+  fetch(sheetCsvUrl)
+    .then(response => response.text())
+    .then(data => {
+      const parsedRows = parseCSV(data);
+      if (parsedRows.length < 2) {
+        document.getElementById("productGrid").innerHTML = "<p style='grid-column:1/-1;text-align:center;'>No products found in Google Sheet.</p>";
+        return;
+      }
+
+      const headers = parsedRows[0].map(h => h.toLowerCase());
+      
+      const nameIdx = headers.findIndex(h => h.includes("product name") || h.includes("title") || h.includes("name"));
+      const catIdx = headers.findIndex(h => h.includes("category"));
+      const priceIdx = headers.findIndex(h => h.includes("price"));
+      const descIdx = headers.findIndex(h => h.includes("description"));
+      const img1Idx = headers.findIndex(h => h === "image url" || h === "image" || h === "image 1" || h === "image url 1");
+      const img2Idx = headers.findIndex(h => h.includes("image url 2") || h.includes("image 2"));
+      const img3Idx = headers.findIndex(h => h.includes("image url 3") || h.includes("image 3"));
+
+      products = [];
+      for (let i = 1; i < parsedRows.length; i++) {
+        const row = parsedRows[i];
+        if (!row[nameIdx]) continue;
+
+        let images = [];
+        if (img1Idx !== -1 && row[img1Idx]) images.push(row[img1Idx]);
+        if (img2Idx !== -1 && row[img2Idx]) images.push(row[img2Idx]);
+        if (img3Idx !== -1 && row[img3Idx]) images.push(row[img3Idx]);
+
+        products.push({
+          name: row[nameIdx] || "",
+          category: row[catIdx] || "",
+          price: row[priceIdx] || "",
+          description: descIdx !== -1 ? row[descIdx] : "",
+          images: images
+        });
+      }
+
+      renderProducts(products);
+    })
+    .catch(err => {
+      console.error("Error loading Sheet:", err);
+      document.getElementById("productGrid").innerHTML = "<p style='grid-column:1/-1;text-align:center;color:red;'>Failed to load products. Please make sure Google Sheet is shared/publicly accessible.</p>";
+    });
+}
+
+function renderProducts(list = products) {
   const grid = document.getElementById("productGrid");
   grid.innerHTML = "";
 
-  if(!list || list.length === 0){
+  if (!list || list.length === 0) {
     grid.innerHTML = "<p style='grid-column:1/-1;text-align:center;padding:40px;'>No products found.</p>";
     return;
   }
@@ -646,17 +324,10 @@ function renderProducts(list = products){
   list.forEach((product, pIndex) => {
     const message = "Assalam-o-Alaikum, mujhe " + product.name + " chahiye.";
 
-    // Collect all valid images (Up to 3 images)
-    let images = [];
-    if(product.image || product["Image URL"]) images.push(product.image || product["Image URL"]);
-    if(product.image2 || product["image url 2"] || product["Image URL 2"]) images.push(product.image2 || product["image url 2"] || product["Image URL 2"]);
-    if(product.image3 || product["image url 3"] || product["Image URL 3"]) images.push(product.image3 || product["image url 3"] || product["Image URL 3"]);
-
-    // If no images found, show placeholder
     let imagesHTML = "";
     let dotsHTML = "";
-    if(images.length > 0){
-      images.forEach((imgUrl, i) => {
+    if (product.images && product.images.length > 0) {
+      product.images.forEach((imgUrl, i) => {
         imagesHTML += `<img src="${imgUrl}" class="slide-img-${pIndex} ${i===0 ? 'active' : ''}" alt="${product.name}" onerror="this.onerror=null;this.parentElement.innerHTML='📺';">`;
         dotsHTML += `<div class="dot dot-${pIndex} ${i===0 ? 'active' : ''}"></div>`;
       });
@@ -664,13 +335,10 @@ function renderProducts(list = products){
       imagesHTML = "📺";
     }
 
-    // Slider Controls (Only show if more than 1 image)
-    const hasMultiple = images.length > 1;
+    const hasMultiple = product.images && product.images.length > 1;
     const prevBtn = hasMultiple ? `<button class="slider-btn prev-btn" onclick="changeSlide(${pIndex}, -1)">❮</button>` : '';
     const nextBtn = hasMultiple ? `<button class="slider-btn next-btn" onclick="changeSlide(${pIndex}, 1)">❯</button>` : '';
     const dotsContainer = hasMultiple ? `<div class="dots-container">${dotsHTML}</div>` : '';
-
-    const descriptionText = product.description || product.Description || "No description available.";
 
     grid.innerHTML += `
       <div class="product" data-category="${product.category}">
@@ -683,7 +351,7 @@ function renderProducts(list = products){
 
         <div class="product-info">
           <h3>${product.name}</h3>
-          <p>${descriptionText}</p>
+          <p>${product.description || ''}</p>
           <div class="price">Rs. ${product.price}</div>
           <a class="order" href="https://wa.me/923072335550?text=${encodeURIComponent(message)}" target="_blank">
             💬 Order on WhatsApp
@@ -694,63 +362,71 @@ function renderProducts(list = products){
   });
 }
 
-// Function to handle Image Switching
-function changeSlide(pIndex, direction){
+function changeSlide(pIndex, direction) {
   const images = document.querySelectorAll(`.slide-img-${pIndex}`);
   const dots = document.querySelectorAll(`.dot-${pIndex}`);
   
   let currentIndex = 0;
   images.forEach((img, i) => {
-    if(img.classList.contains('active')){
+    if (img.classList.contains('active')) {
       currentIndex = i;
       img.classList.remove('active');
     }
   });
 
-  if(dots.length > 0) dots[currentIndex].classList.remove('active');
+  if (dots.length > 0) dots[currentIndex].classList.remove('active');
 
   let newIndex = currentIndex + direction;
-  if(newIndex >= images.length) newIndex = 0;
-  if(newIndex < 0) newIndex = images.length - 1;
+  if (newIndex >= images.length) newIndex = 0;
+  if (newIndex < 0) newIndex = images.length - 1;
 
   images[newIndex].classList.add('active');
-  if(dots.length > 0) dots[newIndex].classList.add('active');
+  if (dots.length > 0) dots[newIndex].classList.add('active');
 }
 
-function searchProducts(){
+function searchProducts() {
   const search = document.getElementById("searchInput").value.toLowerCase();
   const results = products.filter(product =>
     (product.name && product.name.toLowerCase().includes(search)) ||
     (product.category && product.category.toLowerCase().includes(search)) ||
-    ((product.description || product.Description) && (product.description || product.Description).toLowerCase().includes(search))
+    (product.description && product.description.toLowerCase().includes(search))
   );
   renderProducts(results);
 }
 
-function filterCategory(category){
-  const results = products.filter(product => product.category === category);
+function filterCategory(category, btnElem) {
+  const results = products.filter(product => product.category.toLowerCase() === category.toLowerCase());
   renderProducts(results);
+  
+  if (btnElem) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    btnElem.classList.add('active');
+  }
+
   document.getElementById("products").scrollIntoView({ behavior:"smooth" });
 }
 
-function showAll(){
+function showAll(btnElem) {
   renderProducts(products);
+  if (btnElem) {
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    btnElem.classList.add('active');
+  }
 }
 
-function setLanguage(language){
-  if(language === "ur"){
+function setLanguage(language) {
+  if (language === "ur") {
     alert("اردو زبان کا آپشن منتخب کیا گیا ہے۔");
-  }else{
+  } else {
     alert("English language selected.");
   }
 }
 
-// Check if products array is loaded from products.js
-if(typeof products !== 'undefined'){
-  renderProducts(products);
-}
+// Fetch Data
+fetchProductsFromSheet();
 </script>
 
 </body>
 </html>
+
 
