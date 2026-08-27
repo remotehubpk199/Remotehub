@@ -123,8 +123,7 @@ nav a:hover{
   display:flex;
   align-items:center;
   color:white;
-  background:
-  radial-gradient(circle at 75% 50%,#07516f,#020b14 60%);
+  background:radial-gradient(circle at 75% 50%,#07516f,#020b14 60%);
 }
 
 .hero-content{
@@ -292,9 +291,11 @@ nav a:hover{
   transform:translateY(-5px);
 }
 
+/* 3 Image Slider Styling */
 .product-image{
   height:230px;
   background:#edf1f5;
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -305,6 +306,57 @@ nav a:hover{
   width:100%;
   height:100%;
   object-fit:contain;
+  display:none;
+}
+
+.product-image img.active{
+  display:block;
+}
+
+.slider-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.4);
+  color:white;
+  border:none;
+  padding:8px 11px;
+  cursor:pointer;
+  border-radius:50%;
+  font-size:14px;
+  font-weight:bold;
+  z-index:10;
+  transition:background 0.2s;
+}
+
+.slider-btn:hover{
+  background:rgba(0,0,0,0.8);
+}
+
+.prev-btn{
+  left:8px;
+}
+
+.next-btn{
+  right:8px;
+}
+
+.dots-container{
+  position:absolute;
+  bottom:8px;
+  display:flex;
+  gap:5px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  background:rgba(255,255,255,0.5);
+  border-radius:50%;
+}
+
+.dot.active{
+  background:#ffb000;
 }
 
 .product-info{
@@ -319,6 +371,8 @@ nav a:hover{
   color:#687385;
   font-size:14px;
   min-height:40px;
+  line-height:1.4;
+  margin-bottom:12px;
 }
 
 .price{
@@ -413,63 +467,20 @@ footer{
 }
 
 @media(max-width:900px){
-
-  header{
-    flex-wrap:wrap;
-  }
-
-  .search{
-    order:3;
-    flex-basis:100%;
-    max-width:none;
-  }
-
-  .features,
-  .categories,
-  .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
+  header{ flex-wrap:wrap; }
+  .search{ order:3; flex-basis:100%; max-width:none; }
+  .features, .categories, .products{ grid-template-columns:repeat(2,1fr); }
 }
 
 @media(max-width:600px){
-
-  .topbar{
-    font-size:11px;
-  }
-
-  header{
-    padding:15px 4%;
-  }
-
-  .logo{
-    font-size:25px;
-  }
-
-  nav{
-    gap:15px;
-    font-size:13px;
-  }
-
-  .hero{
-    padding:55px 6%;
-  }
-
-  .hero h1{
-    font-size:39px;
-  }
-
-  .features,
-  .categories,
-  .products,
-  .contact{
-    grid-template-columns:1fr;
-  }
-
-  .section{
-    padding:50px 5%;
-  }
-
+  .topbar{ font-size:11px; }
+  header{ padding:15px 4%; }
+  .logo{ font-size:25px; }
+  nav{ gap:15px; font-size:13px; }
+  .hero{ padding:55px 6%; }
+  .hero h1{ font-size:39px; }
+  .features, .categories, .products, .contact{ grid-template-columns:1fr; }
+  .section{ padding:50px 5%; }
 }
 </style>
 </head>
@@ -478,7 +489,6 @@ footer{
 
 <div class="topbar">
   <div>🚚 Cash on Delivery Available in Karachi</div>
-
   <div>
     <span onclick="setLanguage('en')">English</span>
     |
@@ -487,12 +497,10 @@ footer{
 </div>
 
 <header>
-
   <div>
     <div class="logo">
       Remote<span>hub</span>
     </div>
-
     <div class="tagline">
       Smart Remotes for Smarter Living
     </div>
@@ -515,7 +523,6 @@ footer{
   >
     💬 WhatsApp
   </a>
-
 </header>
 
 <nav>
@@ -527,396 +534,223 @@ footer{
 </nav>
 
 <section class="hero" id="home">
-
   <div class="hero-content">
-
     <small>REMOTE HUB</small>
-
-    <h1>
-      Smart Remotes for
-      <span>Smarter Living</span>
-    </h1>
-
+    <h1>Smart Remotes for <span>Smarter Living</span></h1>
     <p>
       Premium replacement remotes for TVs, ACs,
       Android Boxes and smart devices.
       Find your remote and order easily through WhatsApp.
     </p>
-
     <div class="buttons">
-
-      <a class="btn primary" href="#products">
-        🛒 Shop Remotes
-      </a>
-
-      <a
-        class="btn secondary"
-        href="https://wa.me/923072335550"
-        target="_blank"
-      >
-        💬 Order on WhatsApp
-      </a>
-
+      <a class="btn primary" href="#products">🛒 Shop Remotes</a>
+      <a class="btn secondary" href="https://wa.me/923072335550" target="_blank">💬 Order on WhatsApp</a>
     </div>
-
   </div>
-
 </section>
 
 <section class="features">
-
-  <div class="feature">
-    <div class="feature-icon">✓</div>
-    <h3>Quality Products</h3>
-    <p>Reliable replacement remotes.</p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">📺</div>
-    <h3>Wide Compatibility</h3>
-    <p>Remotes for multiple brands.</p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">🚚</div>
-    <h3>Fast Delivery</h3>
-    <p>Delivery available in Karachi.</p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">💵</div>
-    <h3>Cash on Delivery</h3>
-    <p>Easy payment in Karachi.</p>
-  </div>
-
+  <div class="feature"><div class="feature-icon">✓</div><h3>Quality Products</h3><p>Reliable replacement remotes.</p></div>
+  <div class="feature"><div class="feature-icon">📺</div><h3>Wide Compatibility</h3><p>Remotes for multiple brands.</p></div>
+  <div class="feature"><div class="feature-icon">🚚</div><h3>Fast Delivery</h3><p>Delivery available in Karachi.</p></div>
+  <div class="feature"><div class="feature-icon">💵</div><h3>Cash on Delivery</h3><p>Easy payment in Karachi.</p></div>
 </section>
 
 <section class="section" id="categories">
-
   <div class="title">
     <small>SHOP BY CATEGORY</small>
     <h2>Find Your Remote</h2>
   </div>
-
   <div class="categories">
-
-    <div class="category" onclick="filterCategory('AC')">
-      <div class="icon">❄️</div>
-      <h3>AC Remotes</h3>
-      <p>AC replacement remotes</p>
-    </div>
-
-    <div class="category" onclick="filterCategory('TV')">
-      <div class="icon">📺</div>
-      <h3>TV Remotes</h3>
-      <p>Smart LED & TV remotes</p>
-    </div>
-
-    <div class="category" onclick="filterCategory('Android')">
-      <div class="icon">📦</div>
-      <h3>Android Box</h3>
-      <p>Android TV box remotes</p>
-    </div>
-
-    <div class="category" onclick="filterCategory('Universal')">
-      <div class="icon">🎮</div>
-      <h3>Universal</h3>
-      <p>Universal replacement remotes</p>
-    </div>
-
+    <div class="category" onclick="filterCategory('AC')"><div class="icon">❄️</div><h3>AC Remotes</h3><p>AC replacement remotes</p></div>
+    <div class="category" onclick="filterCategory('TV')"><div class="icon">📺</div><h3>TV Remotes</h3><p>Smart LED & TV remotes</p></div>
+    <div class="category" onclick="filterCategory('Android')"><div class="icon">📦</div><h3>Android Box</h3><p>Android TV box remotes</p></div>
+    <div class="category" onclick="filterCategory('Universal')"><div class="icon">🎮</div><h3>Universal</h3><p>Universal replacement remotes</p></div>
   </div>
-
 </section>
 
 <section class="section" id="products">
-
   <div class="title">
     <small>OUR COLLECTION</small>
     <h2>All Remotes</h2>
   </div>
 
   <div class="product-tools">
-
-    <button class="filter-btn active"
-    onclick="showAll()">
-      All
-    </button>
-
-    <button class="filter-btn"
-    onclick="filterCategory('AC')">
-      AC
-    </button>
-
-    <button class="filter-btn"
-    onclick="filterCategory('TV')">
-      TV
-    </button>
-
-    <button class="filter-btn"
-    onclick="filterCategory('Android')">
-      Android Box
-    </button>
-
-    <button class="filter-btn"
-    onclick="filterCategory('Universal')">
-      Universal
-    </button>
-
+    <button class="filter-btn active" onclick="showAll()">All</button>
+    <button class="filter-btn" onclick="filterCategory('AC')">AC</button>
+    <button class="filter-btn" onclick="filterCategory('TV')">TV</button>
+    <button class="filter-btn" onclick="filterCategory('Android')">Android Box</button>
+    <button class="filter-btn" onclick="filterCategory('Universal')">Universal</button>
   </div>
 
   <div class="products" id="productGrid"></div>
-
 </section>
 
 <section class="section about" id="about">
-
   <div class="about-content">
-
     <div class="title">
       <small>ABOUT REMOTE HUB</small>
       <h2>Smart Remotes for Smarter Living</h2>
     </div>
-
-    <p>
-      Remote Hub provides quality replacement remotes
-      for TVs, air conditioners, Android boxes and
-      other smart devices.
-    </p>
-
-    <p>
-      Our goal is to make finding and ordering the
-      right remote simple and convenient.
-    </p>
-
+    <p>Remote Hub provides quality replacement remotes for TVs, air conditioners, Android boxes and other smart devices.</p>
+    <p>Our goal is to make finding and ordering the right remote simple and convenient.</p>
   </div>
-
 </section>
 
 <section class="section" id="contact">
-
   <div class="title">
     <small>GET IN TOUCH</small>
     <h2>Contact Remote Hub</h2>
   </div>
-
   <div class="contact">
-
     <div class="contact-card">
-
       <h3>Contact Information</h3>
-
-      <a href="https://wa.me/923072335550" target="_blank">
-        💬 WhatsApp: 0307 2335550
-      </a>
-
-      <a href="tel:03072335550">
-        📞 Call: 0307 2335550
-      </a>
-
-      <a
-        href="https://maps.app.goo.gl/C5AiUd2NSUh5kTGy6?g_st=ac"
-        target="_blank"
-      >
-        📍 Visit Our Store
-      </a>
-
+      <a href="https://wa.me/923072335550" target="_blank">💬 WhatsApp: 0307 2335550</a>
+      <a href="tel:03072335550">📞 Call: 0307 2335550</a>
+      <a href="https://maps.app.goo.gl/C5AiUd2NSUh5kTGy6?g_st=ac" target="_blank">📍 Visit Our Store</a>
       <div class="social">
-
-        <a
-          href="https://www.instagram.com/the_remote_hub?igsh=MTlpZThnNGFnaXIxeg=="
-          target="_blank"
-        >
-          Instagram
-        </a>
-
-        <a
-          href="https://www.facebook.com/share/1CNRKNpg5H/"
-          target="_blank"
-        >
-          Facebook
-        </a>
-
+        <a href="https://www.instagram.com/the_remote_hub?igsh=MTlpZThnNGFnaXIxeg==" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/share/1CNRKNpg5H/" target="_blank">Facebook</a>
       </div>
-
     </div>
 
     <div class="contact-card">
-
       <h3>Need Help Finding a Remote?</h3>
-
-      <p style="color:#687385;line-height:1.7;">
-        Send us your TV or AC model number on WhatsApp.
-        We can help you find the compatible remote.
-      </p>
-
+      <p style="color:#687385;line-height:1.7;">Send us your TV or AC model number on WhatsApp. We can help you find the compatible remote.</p>
       <br>
-
-      <a
-        class="order"
-        href="https://wa.me/923072335550?text=Assalam-o-Alaikum%2C%20mujhe%20remote%20find%20karne%20mein%20help%20chahiye."
-        target="_blank"
-      >
-        💬 Ask on WhatsApp
-      </a>
-
+      <a class="order" href="https://wa.me/923072335550?text=Assalam-o-Alaikum%2C%20mujhe%20remote%20find%20karne%20mein%20help%20chahiye." target="_blank">💬 Ask on WhatsApp</a>
     </div>
-
   </div>
-
 </section>
 
 <footer>
-
   <p>© 2026 Remote Hub. All Rights Reserved.</p>
-
-  <p style="margin-top:8px;color:#9ca8b5;">
-    Smart Remotes for Smarter Living
-  </p>
-
+  <p style="margin-top:8px;color:#9ca8b5;">Smart Remotes for Smarter Living</p>
 </footer>
 
-<a
-  class="float-whatsapp"
-  href="https://wa.me/923072335550"
-  target="_blank"
->
-  💬
-</a>
+<a class="float-whatsapp" href="https://wa.me/923072335550" target="_blank">💬</a>
 
+<!-- Script File Integration -->
 <script src="products.js"></script>
 
 <script>
-
 function renderProducts(list = products){
-
   const grid = document.getElementById("productGrid");
-
   grid.innerHTML = "";
 
-  if(list.length === 0){
-
-    grid.innerHTML =
-      "<p style='grid-column:1/-1;text-align:center;padding:40px;'>No products found.</p>";
-
+  if(!list || list.length === 0){
+    grid.innerHTML = "<p style='grid-column:1/-1;text-align:center;padding:40px;'>No products found.</p>";
     return;
   }
 
-  list.forEach(product => {
+  list.forEach((product, pIndex) => {
+    const message = "Assalam-o-Alaikum, mujhe " + product.name + " chahiye.";
 
-    const message =
-      "Assalam-o-Alaikum, mujhe " +
-      product.name +
-      " chahiye.";
+    // Collect all valid images (Up to 3 images)
+    let images = [];
+    if(product.image || product["Image URL"]) images.push(product.image || product["Image URL"]);
+    if(product.image2 || product["image url 2"] || product["Image URL 2"]) images.push(product.image2 || product["image url 2"] || product["Image URL 2"]);
+    if(product.image3 || product["image url 3"] || product["Image URL 3"]) images.push(product.image3 || product["image url 3"] || product["Image URL 3"]);
+
+    // If no images found, show placeholder
+    let imagesHTML = "";
+    let dotsHTML = "";
+    if(images.length > 0){
+      images.forEach((imgUrl, i) => {
+        imagesHTML += `<img src="${imgUrl}" class="slide-img-${pIndex} ${i===0 ? 'active' : ''}" alt="${product.name}" onerror="this.onerror=null;this.parentElement.innerHTML='📺';">`;
+        dotsHTML += `<div class="dot dot-${pIndex} ${i===0 ? 'active' : ''}"></div>`;
+      });
+    } else {
+      imagesHTML = "📺";
+    }
+
+    // Slider Controls (Only show if more than 1 image)
+    const hasMultiple = images.length > 1;
+    const prevBtn = hasMultiple ? `<button class="slider-btn prev-btn" onclick="changeSlide(${pIndex}, -1)">❮</button>` : '';
+    const nextBtn = hasMultiple ? `<button class="slider-btn next-btn" onclick="changeSlide(${pIndex}, 1)">❯</button>` : '';
+    const dotsContainer = hasMultiple ? `<div class="dots-container">${dotsHTML}</div>` : '';
+
+    const descriptionText = product.description || product.Description || "No description available.";
 
     grid.innerHTML += `
-
-      <div class="product"
-      data-category="${product.category}">
-
-        <div class="product-image">
-
-          <img
-          src="${product.image}"
-          alt="${product.name}"
-          onerror="this.style.display='none';this.parentElement.innerHTML='📺';"
-          >
-
+      <div class="product" data-category="${product.category}">
+        <div class="product-image" id="slider-${pIndex}">
+          ${imagesHTML}
+          ${prevBtn}
+          ${nextBtn}
+          ${dotsContainer}
         </div>
 
         <div class="product-info">
-
           <h3>${product.name}</h3>
-
-          <p>${product.description}</p>
-
-          <div class="price">
-            ${product.price}
-          </div>
-
-          <a
-          class="order"
-          href="https://wa.me/923072335550?text=${encodeURIComponent(message)}"
-          target="_blank">
-
+          <p>${descriptionText}</p>
+          <div class="price">Rs. ${product.price}</div>
+          <a class="order" href="https://wa.me/923072335550?text=${encodeURIComponent(message)}" target="_blank">
             💬 Order on WhatsApp
-
           </a>
-
         </div>
-
       </div>
-
     `;
+  });
+}
 
+// Function to handle Image Switching
+function changeSlide(pIndex, direction){
+  const images = document.querySelectorAll(`.slide-img-${pIndex}`);
+  const dots = document.querySelectorAll(`.dot-${pIndex}`);
+  
+  let currentIndex = 0;
+  images.forEach((img, i) => {
+    if(img.classList.contains('active')){
+      currentIndex = i;
+      img.classList.remove('active');
+    }
   });
 
+  if(dots.length > 0) dots[currentIndex].classList.remove('active');
+
+  let newIndex = currentIndex + direction;
+  if(newIndex >= images.length) newIndex = 0;
+  if(newIndex < 0) newIndex = images.length - 1;
+
+  images[newIndex].classList.add('active');
+  if(dots.length > 0) dots[newIndex].classList.add('active');
 }
 
 function searchProducts(){
-
-  const search =
-    document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase();
-
-  const results =
-    products.filter(product =>
-
-      product.name.toLowerCase().includes(search) ||
-      product.category.toLowerCase().includes(search) ||
-      product.description.toLowerCase().includes(search)
-
-    );
-
+  const search = document.getElementById("searchInput").value.toLowerCase();
+  const results = products.filter(product =>
+    (product.name && product.name.toLowerCase().includes(search)) ||
+    (product.category && product.category.toLowerCase().includes(search)) ||
+    ((product.description || product.Description) && (product.description || product.Description).toLowerCase().includes(search))
+  );
   renderProducts(results);
-
 }
 
 function filterCategory(category){
-
-  const results =
-    products.filter(product =>
-      product.category === category
-    );
-
+  const results = products.filter(product => product.category === category);
   renderProducts(results);
-
-  document
-  .getElementById("products")
-  .scrollIntoView({
-    behavior:"smooth"
-  });
-
+  document.getElementById("products").scrollIntoView({ behavior:"smooth" });
 }
 
 function showAll(){
-
   renderProducts(products);
-
 }
 
 function setLanguage(language){
-
   if(language === "ur"){
-
-    alert(
-      "اردو زبان کا آپشن منتخب کیا گیا ہے۔"
-    );
-
+    alert("اردو زبان کا آپشن منتخب کیا گیا ہے۔");
   }else{
-
-    alert(
-      "English language selected."
-    );
-
+    alert("English language selected.");
   }
-
 }
 
-loadProducts();
-
+// Check if products array is loaded from products.js
+if(typeof products !== 'undefined'){
+  renderProducts(products);
+}
 </script>
 
 </body>
 </html>
+
