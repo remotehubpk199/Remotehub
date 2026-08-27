@@ -19,7 +19,6 @@ async function loadProducts() {
     );
 
     const data = JSON.parse(jsonText);
-
     const rows = data.table.rows;
 
     products = rows.map(row => {
@@ -33,7 +32,8 @@ async function loadProducts() {
         category: cells[1] || "",
         price: cells[2] ? "Rs. " + cells[2] : "",
         image: cells[3] || "",
-        description: cells[4] || ""
+        image2: cells[4] || "",
+        description: cells[5] || ""
       };
 
     }).filter(product => product.name);
