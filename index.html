@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Remote Hub | Smart Remotes for Smarter Living</title>
+<title>Remote Hub | Smart Remotes</title>
 
 <style>
 *{
@@ -23,7 +23,8 @@ body{
   color:#101827;
 }
 
-/* TOP BAR */
+/* ================= TOP BAR ================= */
+
 .topbar{
   background:#061321;
   color:white;
@@ -31,29 +32,30 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  font-size:14px;
   gap:15px;
+  font-size:14px;
 }
 
-.topbar span{
+.topbar strong{
   color:#ffb000;
-  cursor:pointer;
+}
+
+.lang{
+  white-space:nowrap;
+}
+
+.lang span{
+  color:#ffb000;
   font-weight:bold;
+  cursor:pointer;
 }
 
-.delivery-highlight{
-  color:#fff;
-}
+/* ================= HEADER ================= */
 
-.delivery-highlight strong{
-  color:#ffb000;
-}
-
-/* HEADER */
 header{
   background:#020b14;
   color:white;
-  padding:20px 6%;
+  padding:18px 6%;
   display:flex;
   align-items:center;
   gap:25px;
@@ -78,18 +80,16 @@ header{
   margin-top:4px;
 }
 
-/* SEARCH */
 .search{
   flex:1;
-  display:flex;
-  max-width:600px;
+  max-width:650px;
   margin:auto;
   position:relative;
 }
 
 .search input{
   width:100%;
-  padding:14px 45px 14px 15px;
+  padding:14px 55px 14px 16px;
   border:0;
   outline:0;
   border-radius:8px;
@@ -101,12 +101,12 @@ header{
   right:0;
   top:0;
   height:100%;
-  width:50px;
+  width:52px;
   border:0;
   background:#ffb000;
   border-radius:0 8px 8px 0;
-  font-size:18px;
   cursor:pointer;
+  font-size:18px;
 }
 
 .whatsapp{
@@ -119,7 +119,8 @@ header{
   white-space:nowrap;
 }
 
-/* NAV */
+/* ================= NAV ================= */
+
 nav{
   background:#061426;
   padding:14px 6%;
@@ -139,7 +140,8 @@ nav a:hover{
   color:#ffb000;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
   min-height:500px;
   padding:70px 7%;
@@ -150,7 +152,7 @@ nav a:hover{
 }
 
 .hero-content{
-  max-width:720px;
+  max-width:750px;
 }
 
 .hero small{
@@ -175,10 +177,10 @@ nav a:hover{
   line-height:1.7;
 }
 
-.hero-delivery{
-  margin-top:20px;
+.delivery-row{
+  margin-top:22px;
   display:flex;
-  gap:12px;
+  gap:10px;
   flex-wrap:wrap;
 }
 
@@ -218,7 +220,8 @@ nav a:hover{
   color:white;
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
+
 .features{
   background:white;
   padding:35px 7%;
@@ -243,7 +246,8 @@ nav a:hover{
   font-size:14px;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
+
 .section{
   padding:65px 7%;
 }
@@ -264,7 +268,8 @@ nav a:hover{
   margin-top:8px;
 }
 
-/* CATEGORIES */
+/* ================= CATEGORIES ================= */
+
 .categories{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -296,7 +301,8 @@ nav a:hover{
   font-size:14px;
 }
 
-/* PRODUCT FILTER */
+/* ================= FILTER ================= */
+
 .product-tools{
   display:flex;
   justify-content:center;
@@ -311,6 +317,7 @@ nav a:hover{
   padding:10px 18px;
   border-radius:20px;
   cursor:pointer;
+  font-weight:bold;
 }
 
 .filter-btn.active,
@@ -319,7 +326,8 @@ nav a:hover{
   border-color:#ffb000;
 }
 
-/* PRODUCTS */
+/* ================= PRODUCTS ================= */
+
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -340,9 +348,8 @@ nav a:hover{
   box-shadow:0 10px 30px rgba(0,0,0,.12);
 }
 
-/* IMAGE SLIDER */
 .product-image{
-  height:230px;
+  height:250px;
   background:#edf1f5;
   position:relative;
   display:flex;
@@ -365,122 +372,93 @@ nav a:hover{
   display:block;
 }
 
-.dots-container{
+.swipe-hint{
   position:absolute;
-  bottom:9px;
+  bottom:10px;
   left:50%;
   transform:translateX(-50%);
-  display:flex;
-  gap:5px;
-  z-index:5;
+  background:rgba(0,0,0,.55);
+  color:white;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:11px;
 }
 
-.dot{
-  width:8px;
-  height:8px;
-  background:rgba(0,0,0,.25);
-  border-radius:50%;
-}
+/* ================= PRODUCT INFO ================= */
 
-.dot.active{
-  background:#ffb000;
-}
-
-/* PRODUCT INFO */
 .product-info{
   padding:18px;
 }
 
 .product-info h3{
   margin-bottom:8px;
+  font-size:18px;
 }
 
 .product-info p{
   color:#687385;
   font-size:14px;
-  min-height:40px;
-  line-height:1.4;
-  margin-bottom:12px;
+  line-height:1.5;
+  min-height:42px;
 }
 
 .price{
-  font-size:20px;
+  font-size:21px;
   font-weight:bold;
   margin:15px 0;
 }
 
-.order{
-  display:block;
-  text-align:center;
-  background:#20c76a;
-  color:white;
-  padding:12px;
-  border-radius:7px;
-  text-decoration:none;
-  font-weight:bold;
-}
+/* ================= FULL PRODUCT PAGE ================= */
 
-/* PRODUCT DETAIL MODAL */
-.modal{
+.product-page{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.75);
-  z-index:3000;
-  padding:20px;
+  z-index:5000;
+  background:#f5f7fa;
   overflow-y:auto;
 }
 
-.modal.show{
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.product-page.show{
+  display:block;
 }
 
-.modal-content{
-  background:white;
-  width:100%;
-  max-width:900px;
-  border-radius:18px;
-  overflow:hidden;
-  position:relative;
-  animation:modalIn .2s ease;
-}
-
-@keyframes modalIn{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.close-modal{
-  position:absolute;
-  right:15px;
-  top:15px;
-  width:40px;
-  height:40px;
-  border:0;
-  border-radius:50%;
+.product-page-header{
   background:#020b14;
   color:white;
-  font-size:24px;
-  cursor:pointer;
-  z-index:20;
+  padding:15px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.modal-body{
+.back-btn{
+  border:0;
+  background:white;
+  color:#020b14;
+  padding:10px 17px;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.product-detail{
+  max-width:1100px;
+  margin:35px auto;
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 30px rgba(0,0,0,.1);
   display:grid;
   grid-template-columns:1fr 1fr;
 }
 
-.modal-gallery{
+.detail-gallery{
   background:#edf1f5;
-  min-height:450px;
+  min-height:560px;
   position:relative;
   display:flex;
   align-items:center;
@@ -489,70 +467,83 @@ nav a:hover{
   touch-action:pan-y;
 }
 
-.modal-gallery img{
+.detail-gallery img{
   width:100%;
-  height:450px;
+  height:560px;
   object-fit:contain;
   display:none;
   user-select:none;
   -webkit-user-drag:none;
 }
 
-.modal-gallery img.active{
+.detail-gallery img.active{
   display:block;
 }
 
-.modal-dots{
+.detail-swipe{
   position:absolute;
   bottom:15px;
   left:50%;
   transform:translateX(-50%);
-  display:flex;
-  gap:6px;
+  background:rgba(0,0,0,.6);
+  color:white;
+  padding:7px 14px;
+  border-radius:20px;
+  font-size:12px;
 }
 
-.modal-info{
-  padding:45px 35px;
+.detail-info{
+  padding:55px 45px;
 }
 
-.modal-info .category-label{
+.detail-category{
   color:#ff9f00;
   font-size:13px;
   font-weight:bold;
   text-transform:uppercase;
-  letter-spacing:1px;
+  letter-spacing:2px;
 }
 
-.modal-info h2{
-  font-size:30px;
-  margin:10px 0 15px;
+.detail-info h1{
+  font-size:36px;
+  margin:12px 0 18px;
 }
 
-.modal-info .description{
+.detail-description{
   color:#687385;
-  line-height:1.7;
-  font-size:15px;
+  line-height:1.8;
+  font-size:16px;
 }
 
-.modal-price{
-  font-size:28px;
+.detail-price{
+  font-size:32px;
   font-weight:bold;
   margin:25px 0;
 }
 
-.modal-order{
+.detail-delivery{
+  background:#f5f7fa;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:20px;
+  line-height:1.8;
+}
+
+.detail-order{
   display:block;
+  width:100%;
   background:#20c76a;
   color:white;
   text-align:center;
   text-decoration:none;
-  padding:15px;
-  border-radius:8px;
+  padding:16px;
+  border-radius:9px;
   font-weight:bold;
-  font-size:16px;
+  font-size:17px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
+
 .about{
   background:#071827;
   color:white;
@@ -570,7 +561,8 @@ nav a:hover{
   margin-top:15px;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+
 .contact{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -604,7 +596,8 @@ nav a:hover{
   border-radius:7px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
   background:#020b14;
   color:white;
@@ -612,7 +605,8 @@ footer{
   padding:25px;
 }
 
-/* FLOAT WHATSAPP */
+/* ================= FLOAT WHATSAPP ================= */
+
 .float-whatsapp{
   position:fixed;
   right:20px;
@@ -630,7 +624,8 @@ footer{
   z-index:999;
 }
 
-/* NO RESULTS */
+/* ================= NO RESULTS ================= */
+
 .no-results{
   grid-column:1/-1;
   text-align:center;
@@ -640,7 +635,8 @@ footer{
   color:#687385;
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE ================= */
+
 @media(max-width:900px){
 
   header{
@@ -659,20 +655,21 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 
-  .modal-body{
+  .product-detail{
     grid-template-columns:1fr;
+    margin:15px;
   }
 
-  .modal-gallery{
-    min-height:350px;
+  .detail-gallery{
+    min-height:400px;
   }
 
-  .modal-gallery img{
-    height:350px;
+  .detail-gallery img{
+    height:400px;
   }
 
-  .modal-info{
-    padding:30px;
+  .detail-info{
+    padding:35px 25px;
   }
 }
 
@@ -720,35 +717,36 @@ footer{
   }
 
   .product-image{
-    height:270px;
+    height:290px;
   }
 
-  .modal{
-    padding:10px;
+  .product-detail{
+    margin:0;
+    border-radius:0;
   }
 
-  .modal-content{
-    border-radius:12px;
+  .detail-gallery{
+    min-height:330px;
   }
 
-  .modal-gallery{
-    min-height:300px;
+  .detail-gallery img{
+    height:330px;
   }
 
-  .modal-gallery img{
-    height:300px;
+  .detail-info{
+    padding:28px 20px 40px;
   }
 
-  .modal-info{
-    padding:25px 20px;
+  .detail-info h1{
+    font-size:27px;
   }
 
-  .modal-info h2{
-    font-size:24px;
+  .detail-price{
+    font-size:27px;
   }
 
-  .modal-price{
-    font-size:24px;
+  .product-page-header{
+    padding:12px 15px;
   }
 
   .float-whatsapp{
@@ -764,11 +762,11 @@ footer{
 <!-- TOP BAR -->
 <div class="topbar">
 
-  <div class="delivery-highlight" id="deliveryText">
+  <div id="deliveryText">
     🚚 <strong>Karachi:</strong> 1 Hour Delivery | 🇵🇰 All Pakistan Delivery Available
   </div>
 
-  <div>
+  <div class="lang">
     <span onclick="setLanguage('en')">English</span>
     |
     <span onclick="setLanguage('ur')">اردو</span>
@@ -781,7 +779,10 @@ footer{
 
   <div>
     <div class="logo">Remote<span>hub</span></div>
-    <div class="tagline" data-en="Smart Remotes for Smarter Living" data-ur="بہتر زندگی کے لیے اسمارٹ ریموٹس">
+
+    <div class="tagline"
+         data-en="Smart Remotes for Smarter Living"
+         data-ur="اسمارٹ ریموٹس، بہتر زندگی کے لیے">
       Smart Remotes for Smarter Living
     </div>
   </div>
@@ -791,7 +792,7 @@ footer{
     <input
       id="searchInput"
       type="text"
-      placeholder="Search by remote, brand or model..."
+      placeholder="Search remote, brand or model..."
       oninput="searchProducts()"
     >
 
@@ -807,10 +808,14 @@ footer{
 
 </header>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
 
-  <a href="#home" data-en="Home" data-ur="ہوم">Home</a>
+  <a href="#home"
+     data-en="Home"
+     data-ur="ہوم">
+     Home
+  </a>
 
   <a href="#categories"
      data-en="Categories"
@@ -850,14 +855,13 @@ footer{
       Smart Remotes for <span>Smarter Living</span>
     </h1>
 
-    <p
-      data-en="Premium replacement remotes for TVs, ACs, Android Boxes and smart devices. Find your remote and order easily through WhatsApp."
-      data-ur="TV، AC، Android Box اور اسمارٹ ڈیوائسز کے لیے معیاری replacement remotes۔ اپنا ریموٹ تلاش کریں اور WhatsApp کے ذریعے آسانی سے آرڈر کریں۔">
+    <p data-en="Premium replacement remotes for TVs, ACs, Android Boxes and smart devices. Find your remote and order easily through WhatsApp."
+       data-ur="TV، AC، Android Box اور اسمارٹ ڈیوائسز کے لیے معیاری replacement remotes۔ اپنا ریموٹ تلاش کریں اور WhatsApp کے ذریعے آسانی سے آرڈر کریں۔">
       Premium replacement remotes for TVs, ACs, Android Boxes and smart devices.
       Find your remote and order easily through WhatsApp.
     </p>
 
-    <div class="hero-delivery">
+    <div class="delivery-row">
 
       <div class="delivery-box">
         ⚡ <strong>Karachi</strong> — 1 Hour Delivery
@@ -901,32 +905,48 @@ footer{
 
   <div class="feature">
     <div class="feature-icon">✓</div>
-    <h3 data-en="Quality Products" data-ur="معیاری مصنوعات">Quality Products</h3>
-    <p data-en="Reliable replacement remotes." data-ur="قابل اعتماد replacement remotes۔">
+    <h3 data-en="Quality Products"
+        data-ur="معیاری مصنوعات">
+      Quality Products
+    </h3>
+    <p data-en="Reliable replacement remotes."
+       data-ur="قابل اعتماد replacement remotes۔">
       Reliable replacement remotes.
     </p>
   </div>
 
   <div class="feature">
     <div class="feature-icon">📺</div>
-    <h3 data-en="Wide Compatibility" data-ur="بہت سے برانڈز">Wide Compatibility</h3>
-    <p data-en="Remotes for multiple brands." data-ur="مختلف برانڈز کے ریموٹس۔">
+    <h3 data-en="Wide Compatibility"
+        data-ur="بہت سے برانڈز">
+      Wide Compatibility
+    </h3>
+    <p data-en="Remotes for multiple brands."
+       data-ur="مختلف برانڈز کے ریموٹس۔">
       Remotes for multiple brands.
     </p>
   </div>
 
   <div class="feature">
     <div class="feature-icon">🚚</div>
-    <h3 data-en="Fast Delivery" data-ur="تیز ڈیلیوری">Fast Delivery</h3>
-    <p data-en="1 hour delivery in Karachi." data-ur="کراچی میں 1 گھنٹے کی ڈیلیوری۔">
+    <h3 data-en="Fast Delivery"
+        data-ur="تیز ڈیلیوری">
+      Fast Delivery
+    </h3>
+    <p data-en="1 hour delivery in Karachi."
+       data-ur="کراچی میں 1 گھنٹے کی ڈیلیوری۔">
       1 hour delivery in Karachi.
     </p>
   </div>
 
   <div class="feature">
     <div class="feature-icon">🇵🇰</div>
-    <h3 data-en="All Pakistan" data-ur="پورے پاکستان میں">All Pakistan</h3>
-    <p data-en="Delivery available across Pakistan." data-ur="پورے پاکستان میں ڈیلیوری دستیاب ہے۔">
+    <h3 data-en="All Pakistan"
+        data-ur="پورے پاکستان میں">
+      All Pakistan
+    </h3>
+    <p data-en="Delivery available across Pakistan."
+       data-ur="پورے پاکستان میں ڈیلیوری دستیاب ہے۔">
       Delivery available across Pakistan.
     </p>
   </div>
@@ -952,7 +972,8 @@ footer{
 
   <div class="categories">
 
-    <div class="category" onclick="filterCategory('AC')">
+    <div class="category"
+         onclick="filterCategory('AC')">
 
       <div class="icon">❄️</div>
 
@@ -968,7 +989,8 @@ footer{
 
     </div>
 
-    <div class="category" onclick="filterCategory('TV')">
+    <div class="category"
+         onclick="filterCategory('TV')">
 
       <div class="icon">📺</div>
 
@@ -984,7 +1006,8 @@ footer{
 
     </div>
 
-    <div class="category" onclick="filterCategory('Android')">
+    <div class="category"
+         onclick="filterCategory('Android')">
 
       <div class="icon">📦</div>
 
@@ -1000,7 +1023,8 @@ footer{
 
     </div>
 
-    <div class="category" onclick="filterCategory('Universal')">
+    <div class="category"
+         onclick="filterCategory('Universal')">
 
       <div class="icon">🎮</div>
 
@@ -1047,28 +1071,22 @@ footer{
     </button>
 
     <button class="filter-btn"
-            onclick="filterCategory('AC', this)"
-            data-en="AC"
-            data-ur="AC">
+            onclick="filterCategory('AC',this)">
       AC
     </button>
 
     <button class="filter-btn"
-            onclick="filterCategory('TV', this)"
-            data-en="TV"
-            data-ur="TV">
+            onclick="filterCategory('TV',this)">
       TV
     </button>
 
     <button class="filter-btn"
-            onclick="filterCategory('Android', this)"
-            data-en="Android Box"
-            data-ur="Android Box">
+            onclick="filterCategory('Android',this)">
       Android Box
     </button>
 
     <button class="filter-btn"
-            onclick="filterCategory('Universal', this)"
+            onclick="filterCategory('Universal',this)"
             data-en="Universal"
             data-ur="یونیورسل">
       Universal
@@ -1077,51 +1095,70 @@ footer{
   </div>
 
   <div class="products" id="productGrid">
-    Loading products from Google Sheet...
+    Loading products...
   </div>
 
 </section>
 
-<!-- PRODUCT MODAL -->
-<div class="modal" id="productModal">
+<!-- FULL PRODUCT PAGE -->
+<div class="product-page"
+     id="productPage">
 
-  <div class="modal-content">
+  <div class="product-page-header">
 
-    <button class="close-modal"
-            onclick="closeProductModal()">
-      ×
+    <div class="logo">
+      Remote<span>hub</span>
+    </div>
+
+    <button class="back-btn"
+            onclick="closeProductPage()"
+            data-en="← Back to Products"
+            data-ur="← واپس پروڈکٹس">
+      ← Back to Products
     </button>
 
-    <div class="modal-body">
+  </div>
 
-      <div class="modal-gallery"
-           id="modalGallery">
+  <div class="product-detail">
+
+    <div class="detail-gallery"
+         id="detailGallery">
+    </div>
+
+    <div class="detail-info">
+
+      <div class="detail-category"
+           id="detailCategory">
       </div>
 
-      <div class="modal-info">
+      <h1 id="detailName"></h1>
 
-        <div class="category-label"
-             id="modalCategory">
-        </div>
+      <p class="detail-description"
+         id="detailDescription">
+      </p>
 
-        <h2 id="modalName"></h2>
+      <div class="detail-price"
+           id="detailPrice">
+      </div>
 
-        <p class="description"
-           id="modalDescription">
-        </p>
+      <div class="detail-delivery">
 
-        <div class="modal-price"
-             id="modalPrice">
-        </div>
+        ⚡ <strong>Karachi:</strong> 1 Hour Delivery
+        <br>
 
-        <a class="modal-order"
-           id="modalOrder"
-           href="#"
-           target="_blank">
-           💬 Order on WhatsApp
-        </a>
+        🇵🇰 <strong>Pakistan:</strong> Delivery Available
+        <br>
+
+        💵 Cash on Delivery Available
 
       </div>
+
+      <a class="detail-order"
+         id="detailOrder"
+         href="#"
+         target="_blank">
+         💬 Order This Remote on WhatsApp
+      </a>
 
     </div>
 
@@ -1130,7 +1167,8 @@ footer{
 </div>
 
 <!-- ABOUT -->
-<section class="section about" id="about">
+<section class="section about"
+         id="about">
 
   <div class="about-content">
 
@@ -1148,16 +1186,14 @@ footer{
 
     </div>
 
-    <p
-      data-en="Remote Hub provides quality replacement remotes for TVs, air conditioners, Android boxes and other smart devices."
-      data-ur="Remote Hub TV، air conditioners، Android boxes اور دیگر smart devices کے لیے معیاری replacement remotes فراہم کرتا ہے۔">
+    <p data-en="Remote Hub provides quality replacement remotes for TVs, air conditioners, Android boxes and other smart devices."
+       data-ur="Remote Hub TV، air conditioners، Android boxes اور دیگر smart devices کے لیے معیاری replacement remotes فراہم کرتا ہے۔">
       Remote Hub provides quality replacement remotes for TVs, air conditioners,
       Android boxes and other smart devices.
     </p>
 
-    <p
-      data-en="We deliver across Pakistan, with fast 1-hour delivery available in Karachi."
-      data-ur="ہم پورے پاکستان میں ڈیلیوری کرتے ہیں، جبکہ کراچی میں تیز 1 گھنٹے کی ڈیلیوری دستیاب ہے۔">
+    <p data-en="We deliver across Pakistan, with fast 1-hour delivery available in Karachi."
+       data-ur="ہم پورے پاکستان میں ڈیلیوری کرتے ہیں، جبکہ کراچی میں تیز 1 گھنٹے کی ڈیلیوری دستیاب ہے۔">
       We deliver across Pakistan, with fast 1-hour delivery available in Karachi.
     </p>
 
@@ -1166,7 +1202,8 @@ footer{
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+<section class="section"
+         id="contact">
 
   <div class="title">
 
@@ -1193,28 +1230,28 @@ footer{
 
       <a href="https://wa.me/923072335550"
          target="_blank">
-         💬 WhatsApp: 0307 2335550
+        💬 WhatsApp: 0307 2335550
       </a>
 
       <a href="tel:03072335550">
-         📞 Call: 0307 2335550
+        📞 Call: 0307 2335550
       </a>
 
       <a href="https://maps.app.goo.gl/C5AiUd2NSUh5kTGy6?g_st=ac"
          target="_blank">
-         📍 Visit Our Store
+        📍 Visit Our Store
       </a>
 
       <div class="social">
 
         <a href="https://www.instagram.com/the_remote_hub?igsh=MTlpZThnNGFnaXIxeg=="
            target="_blank">
-           Instagram
+          Instagram
         </a>
 
         <a href="https://www.facebook.com/share/1CNRKNpg5H/"
            target="_blank">
-           Facebook
+          Facebook
         </a>
 
       </div>
@@ -1228,22 +1265,21 @@ footer{
         Need Help Finding a Remote?
       </h3>
 
-      <p
-        style="color:#687385;line-height:1.7;"
-        data-en="Send us your TV or AC model number on WhatsApp. We can help you find the compatible remote."
-        data-ur="اپنے TV یا AC کا model number WhatsApp پر بھیجیں۔ ہم آپ کو compatible remote تلاش کرنے میں مدد کریں گے۔">
+      <p style="color:#687385;line-height:1.7;"
+         data-en="Send us your TV or AC model number on WhatsApp. We can help you find the compatible remote."
+         data-ur="اپنے TV یا AC کا model number WhatsApp پر بھیجیں۔ ہم آپ کو compatible remote تلاش کرنے میں مدد کریں گے۔">
         Send us your TV or AC model number on WhatsApp.
         We can help you find the compatible remote.
       </p>
 
       <br>
 
-      <a class="order"
+      <a class="whatsapp"
          href="https://wa.me/923072335550?text=Assalam-o-Alaikum%2C%20mujhe%20remote%20find%20karne%20mein%20help%20chahiye."
          target="_blank"
          data-en="💬 Ask on WhatsApp"
          data-ur="💬 WhatsApp پر پوچھیں">
-         💬 Ask on WhatsApp
+        💬 Ask on WhatsApp
       </a>
 
     </div>
@@ -1265,7 +1301,6 @@ footer{
 
 </footer>
 
-<!-- FLOAT WHATSAPP -->
 <a class="float-whatsapp"
    href="https://wa.me/923072335550"
    target="_blank">
@@ -1276,7 +1311,7 @@ footer{
 
 /* =========================================================
    GOOGLE SHEET
-   SAME SHEET — NO CHANGE REQUIRED
+   SAME SHEET - NO CHANGE
 ========================================================= */
 
 const sheetCsvUrl =
@@ -1284,6 +1319,7 @@ const sheetCsvUrl =
 
 let products = [];
 let currentLanguage = "en";
+let currentProduct = null;
 
 
 /* =========================================================
@@ -1292,54 +1328,54 @@ let currentLanguage = "en";
 
 function parseCSV(text){
 
-  let lines = [];
-  let row = [];
-  let current = "";
-  let inQuotes = false;
+  let lines=[];
+  let row=[];
+  let current="";
+  let inQuotes=false;
 
   for(let i=0;i<text.length;i++){
 
-    let char = text[i];
-    let nextChar = text[i+1];
+    let char=text[i];
+    let next=text[i+1];
 
     if(char === '"'){
 
-      if(inQuotes && nextChar === '"'){
-        current += '"';
+      if(inQuotes && next === '"'){
+        current+='"';
         i++;
       }else{
-        inQuotes = !inQuotes;
+        inQuotes=!inQuotes;
       }
 
     }else if(char === "," && !inQuotes){
 
       row.push(current.trim());
-      current = "";
+      current="";
 
     }else if((char === "\r" || char === "\n") && !inQuotes){
 
-      if(char === "\r" && nextChar === "\n"){
+      if(char === "\r" && next === "\n"){
         i++;
       }
 
       row.push(current.trim());
 
-      if(row.length > 1 || row[0] !== ""){
+      if(row.length>1 || row[0] !== ""){
         lines.push(row);
       }
 
-      row = [];
-      current = "";
+      row=[];
+      current="";
 
     }else{
 
-      current += char;
+      current+=char;
 
     }
 
   }
 
-  if(current || row.length > 0){
+  if(current || row.length>0){
 
     row.push(current.trim());
     lines.push(row);
@@ -1351,112 +1387,132 @@ function parseCSV(text){
 
 
 /* =========================================================
-   LOAD PRODUCTS FROM GOOGLE SHEET
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(text){
+
+  if(text===null || text===undefined){
+    return "";
+  }
+
+  return String(text)
+  .replace(/&/g,"&amp;")
+  .replace(/</g,"&lt;")
+  .replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;")
+  .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================================================
+   LOAD PRODUCTS
 ========================================================= */
 
 function fetchProductsFromSheet(){
 
   fetch(sheetCsvUrl)
 
-  .then(response => {
+  .then(response=>{
 
     if(!response.ok){
-      throw new Error("Google Sheet could not be loaded.");
+      throw new Error("Sheet not loaded");
     }
 
     return response.text();
 
   })
 
-  .then(data => {
+  .then(data=>{
 
-    const parsedRows = parseCSV(data);
+    const rows=parseCSV(data);
 
-    if(parsedRows.length < 2){
+    if(rows.length<2){
 
-      document.getElementById("productGrid").innerHTML =
-      "<div class='no-results'>No products found in Google Sheet.</div>";
+      document.getElementById("productGrid").innerHTML=
+      "<div class='no-results'>No products found.</div>";
 
       return;
     }
 
-    const headers = parsedRows[0].map(h =>
+    const headers=rows[0].map(h =>
       h.toLowerCase().trim()
     );
 
-    const nameIdx = headers.findIndex(h =>
+    const nameIdx=headers.findIndex(h =>
       h.includes("product name") ||
       h.includes("title") ||
-      h === "name"
+      h==="name"
     );
 
-    const catIdx = headers.findIndex(h =>
+    const catIdx=headers.findIndex(h =>
       h.includes("category")
     );
 
-    const priceIdx = headers.findIndex(h =>
+    const priceIdx=headers.findIndex(h =>
       h.includes("price")
     );
 
-    const descIdx = headers.findIndex(h =>
+    const descIdx=headers.findIndex(h =>
       h.includes("description")
     );
 
-    const img1Idx = headers.findIndex(h =>
-      h === "image url" ||
-      h === "image" ||
-      h === "image 1" ||
-      h === "image url 1"
+    const img1Idx=headers.findIndex(h =>
+      h==="image url" ||
+      h==="image" ||
+      h==="image 1" ||
+      h==="image url 1"
     );
 
-    const img2Idx = headers.findIndex(h =>
+    const img2Idx=headers.findIndex(h =>
       h.includes("image url 2") ||
       h.includes("image 2")
     );
 
-    const img3Idx = headers.findIndex(h =>
+    const img3Idx=headers.findIndex(h =>
       h.includes("image url 3") ||
       h.includes("image 3")
     );
 
-    products = [];
+    products=[];
 
-    for(let i=1;i<parsedRows.length;i++){
+    for(let i=1;i<rows.length;i++){
 
-      const row = parsedRows[i];
+      const row=rows[i];
 
-      if(nameIdx === -1 || !row[nameIdx]){
+      if(nameIdx===-1 || !row[nameIdx]){
         continue;
       }
 
-      let images = [];
+      let images=[];
 
-      if(img1Idx !== -1 && row[img1Idx]){
+      if(img1Idx!==-1 && row[img1Idx]){
         images.push(row[img1Idx]);
       }
 
-      if(img2Idx !== -1 && row[img2Idx]){
+      if(img2Idx!==-1 && row[img2Idx]){
         images.push(row[img2Idx]);
       }
 
-      if(img3Idx !== -1 && row[img3Idx]){
+      if(img3Idx!==-1 && row[img3Idx]){
         images.push(row[img3Idx]);
       }
 
       products.push({
 
-        name: row[nameIdx] || "",
+        name:row[nameIdx] || "",
 
         category:
-        catIdx !== -1 ? row[catIdx] || "" : "",
+        catIdx!==-1 ? row[catIdx] || "" : "",
 
         price:
-        priceIdx !== -1 ? row[priceIdx] || "" : "",
+        priceIdx!==-1 ? row[priceIdx] || "" : "",
 
         description:
-        descIdx !== -1 ? row[descIdx] || "" : "",
+        descIdx!==-1 ? row[descIdx] || "" : "",
 
-        images: images
+        images:images
 
       });
 
@@ -1466,35 +1522,14 @@ function fetchProductsFromSheet(){
 
   })
 
-  .catch(err => {
+  .catch(error=>{
 
-    console.error(err);
+    console.error(error);
 
-    document.getElementById("productGrid").innerHTML =
-    "<div class='no-results'>Failed to load products. Please make sure Google Sheet is shared publicly.</div>";
+    document.getElementById("productGrid").innerHTML=
+    "<div class='no-results'>Products load nahi ho rahe. Google Sheet sharing check karein.</div>";
 
   });
-
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-   Prevents product text from breaking the website
-========================================================= */
-
-function escapeHTML(text){
-
-  if(text === null || text === undefined){
-    return "";
-  }
-
-  return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
 
 }
 
@@ -1503,75 +1538,61 @@ function escapeHTML(text){
    RENDER PRODUCTS
 ========================================================= */
 
-function renderProducts(list = products){
+function renderProducts(list=products){
 
-  const grid = document.getElementById("productGrid");
+  const grid=document.getElementById("productGrid");
 
-  grid.innerHTML = "";
+  grid.innerHTML="";
 
-  if(!list || list.length === 0){
+  if(!list.length){
 
-    grid.innerHTML =
+    grid.innerHTML=
     "<div class='no-results'>No matching products found.</div>";
 
     return;
   }
 
-  list.forEach((product,pIndex)=>{
+  list.forEach((product,index)=>{
 
-    let imagesHTML = "";
-    let dotsHTML = "";
+    let imagesHTML="";
 
-    if(product.images && product.images.length > 0){
+    if(product.images.length){
 
-      product.images.forEach((imgUrl,i)=>{
+      product.images.forEach((img,i)=>{
 
-        imagesHTML += `
+        imagesHTML+=`
           <img
-            src="${escapeHTML(imgUrl)}"
-            class="slide-img-${pIndex} ${i===0 ? "active" : ""}"
+            src="${escapeHTML(img)}"
+            class="card-img-${index} ${i===0 ? "active":""}"
             alt="${escapeHTML(product.name)}"
             draggable="false"
             onerror="this.style.display='none';"
           >
         `;
 
-        dotsHTML += `
-          <div class="dot dot-${pIndex} ${i===0 ? "active" : ""}"></div>
-        `;
-
       });
 
     }else{
 
-      imagesHTML = `
-        <div style="font-size:60px;">📺</div>
-      `;
+      imagesHTML=`<div style="font-size:60px;">📺</div>`;
 
     }
 
-    const dotsContainer =
-      product.images && product.images.length > 1
-      ? `<div class="dots-container">${dotsHTML}</div>`
-      : "";
+    grid.innerHTML+=`
 
-    grid.innerHTML += `
+      <div class="product"
+           onclick="openProductPage('${product._id}')">
 
-      <div
-        class="product"
-        data-category="${escapeHTML(product.category)}"
-        onclick="openProduct(${pIndex}, event)"
-      >
-
-        <div
-          class="product-image"
-          id="slider-${pIndex}"
-          data-product-index="${pIndex}"
-        >
+        <div class="product-image"
+             id="cardSlider-${product._id}">
 
           ${imagesHTML}
 
-          ${dotsContainer}
+          ${
+            product.images.length>1
+            ? `<div class="swipe-hint">← Swipe →</div>`
+            : ""
+          }
 
         </div>
 
@@ -1582,23 +1603,15 @@ function renderProducts(list = products){
           </h3>
 
           <p>
-            ${escapeHTML(product.description || "Quality replacement remote.")}
+            ${escapeHTML(
+              product.description ||
+              "Quality replacement remote."
+            )}
           </p>
 
           <div class="price">
             Rs. ${escapeHTML(product.price)}
           </div>
-
-          <a
-            class="order"
-            href="https://wa.me/923072335550?text=${encodeURIComponent(
-              "Assalam-o-Alaikum, mujhe " + product.name + " chahiye."
-            )}"
-            target="_blank"
-            onclick="event.stopPropagation();"
-          >
-            💬 Order on WhatsApp
-          </a>
 
         </div>
 
@@ -1606,10 +1619,11 @@ function renderProducts(list = products){
 
     `;
 
-    setupSwipe(
-      document.getElementById(`slider-${pIndex}`),
-      pIndex,
-      false
+    setupCardSwipe(
+      document.getElementById(
+        `cardSlider-${product._id}`
+      ),
+      product
     );
 
   });
@@ -1618,43 +1632,77 @@ function renderProducts(list = products){
 
 
 /* =========================================================
-   TOUCH / SWIPE SLIDER
+   GIVE PRODUCTS UNIQUE IDs
 ========================================================= */
 
-function setupSwipe(element,pIndex,isModal){
+function prepareProducts(){
 
-  if(!element){
+  products.forEach((product,index)=>{
+
+    product._id =
+      "remote-" +
+      index +
+      "-" +
+      Date.now();
+
+  });
+
+}
+
+
+/* =========================================================
+   CARD SWIPE
+========================================================= */
+
+function setupCardSwipe(element,product){
+
+  if(!element || product.images.length<2){
     return;
   }
 
-  let startX = 0;
-  let startY = 0;
+  let startX=0;
+  let startY=0;
+  let current=0;
 
-  element.addEventListener("touchstart",function(e){
+  element.addEventListener("touchstart",e=>{
 
-    startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
+    startX=e.touches[0].clientX;
+    startY=e.touches[0].clientY;
 
   },{passive:true});
 
-  element.addEventListener("touchend",function(e){
+  element.addEventListener("touchend",e=>{
 
-    const endX = e.changedTouches[0].clientX;
-    const endY = e.changedTouches[0].clientY;
+    let endX=e.changedTouches[0].clientX;
+    let endY=e.changedTouches[0].clientY;
 
-    const diffX = endX - startX;
-    const diffY = endY - startY;
+    let dx=endX-startX;
+    let dy=endY-startY;
 
-    if(Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)){
+    if(
+      Math.abs(dx)>40 &&
+      Math.abs(dx)>Math.abs(dy)
+    ){
 
-      if(isModal){
+      current += dx<0 ? 1 : -1;
 
-        changeModalSlide(diffX < 0 ? 1 : -1);
+      if(current>=product.images.length){
+        current=0;
+      }
 
-      }else{
+      if(current<0){
+        current=product.images.length-1;
+      }
 
-        changeSlide(pIndex,diffX < 0 ? 1 : -1);
+      const imgs=
+        element.querySelectorAll("img");
 
+      imgs.forEach(img =>
+        img.classList.remove("active")
+      );
+
+      if(imgs[current]){
+        imgs[current].classList.add("active");
       }
 
     }
@@ -1665,110 +1713,49 @@ function setupSwipe(element,pIndex,isModal){
 
 
 /* =========================================================
-   PRODUCT CARD SLIDE
-========================================================= */
-
-function changeSlide(pIndex,direction){
-
-  const images =
-    document.querySelectorAll(`.slide-img-${pIndex}`);
-
-  const dots =
-    document.querySelectorAll(`.dot-${pIndex}`);
-
-  if(images.length <= 1){
-    return;
-  }
-
-  let currentIndex = 0;
-
-  images.forEach((img,i)=>{
-
-    if(img.classList.contains("active")){
-
-      currentIndex = i;
-      img.classList.remove("active");
-
-    }
-
-  });
-
-  if(dots.length > 0 &&
-     dots[currentIndex]){
-
-    dots[currentIndex].classList.remove("active");
-
-  }
-
-  let newIndex =
-    currentIndex + direction;
-
-  if(newIndex >= images.length){
-    newIndex = 0;
-  }
-
-  if(newIndex < 0){
-    newIndex = images.length - 1;
-  }
-
-  images[newIndex].classList.add("active");
-
-  if(dots.length > 0 &&
-     dots[newIndex]){
-
-    dots[newIndex].classList.add("active");
-
-  }
-
-}
-
-
-/* =========================================================
-   SEARCH
+   SEARCH - IMPROVED
 ========================================================= */
 
 function normalizeSearch(text){
 
   return String(text || "")
     .toLowerCase()
-    .trim()
-    .replace(/\s+/g," ");
+    .replace(/[^\p{L}\p{N}]+/gu," ")
+    .replace(/\s+/g," ")
+    .trim();
 
 }
 
 
 function searchProducts(){
 
-  const search =
+  const input=
     normalizeSearch(
       document.getElementById("searchInput").value
     );
 
-  if(search === ""){
+  if(!input){
 
     renderProducts(products);
-
     return;
   }
 
-  const searchWords =
-    search.split(" ");
+  const words=input.split(" ");
 
-  const results =
-    products.filter(product=>{
+  const results=products.filter(product=>{
 
-      const searchableText =
-        normalizeSearch(
-          product.name + " " +
-          product.category + " " +
-          product.description
-        );
-
-      return searchWords.every(word =>
-        searchableText.includes(word)
+    const searchable=
+      normalizeSearch(
+        product.name + " " +
+        product.category + " " +
+        product.description
       );
 
-    });
+    return words.every(word =>
+      searchable.includes(word)
+    );
+
+  });
 
   renderProducts(results);
 
@@ -1779,37 +1766,36 @@ function searchProducts(){
    CATEGORY FILTER
 ========================================================= */
 
-function filterCategory(category,btnElem){
+function filterCategory(category,btn){
 
-  const results =
-    products.filter(product => {
+  const selected=
+    normalizeSearch(category);
 
-      const productCategory =
+  const results=
+    products.filter(product=>{
+
+      const cat=
         normalizeSearch(product.category);
 
-      const selectedCategory =
-        normalizeSearch(category);
-
-      return productCategory === selectedCategory ||
-             productCategory.includes(selectedCategory);
+      return cat.includes(selected);
 
     });
 
   renderProducts(results);
 
   document.querySelectorAll(".filter-btn")
-    .forEach(btn =>
-      btn.classList.remove("active")
-    );
+  .forEach(b =>
+    b.classList.remove("active")
+  );
 
-  if(btnElem){
-    btnElem.classList.add("active");
+  if(btn){
+    btn.classList.add("active");
   }
 
   document.getElementById("products")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+  .scrollIntoView({
+    behavior:"smooth"
+  });
 
 }
 
@@ -1818,110 +1804,121 @@ function filterCategory(category,btnElem){
    SHOW ALL
 ========================================================= */
 
-function showAll(btnElem){
+function showAll(btn){
 
-  document.getElementById("searchInput").value = "";
+  document.getElementById("searchInput").value="";
 
   renderProducts(products);
 
   document.querySelectorAll(".filter-btn")
-    .forEach(btn =>
-      btn.classList.remove("active")
-    );
+  .forEach(b =>
+    b.classList.remove("active")
+  );
 
-  if(btnElem){
-    btnElem.classList.add("active");
+  if(btn){
+    btn.classList.add("active");
   }
 
 }
 
 
 /* =========================================================
-   OPEN PRODUCT
+   OPEN FULL PRODUCT PAGE
 ========================================================= */
 
-let modalProduct = null;
-let modalCurrentIndex = 0;
+function openProductPage(id){
 
-function openProduct(index,event){
-
-  if(event &&
-     event.target.closest(".order")){
-    return;
-  }
-
-  const product =
-    products[index];
+  const product=
+    products.find(p => p._id===id);
 
   if(!product){
     return;
   }
 
-  modalProduct = product;
-  modalCurrentIndex = 0;
+  currentProduct=product;
 
-  document.getElementById("modalName").textContent =
-    product.name;
-
-  document.getElementById("modalCategory").textContent =
+  document.getElementById("detailCategory")
+    .textContent=
     product.category || "Remote";
 
-  document.getElementById("modalDescription").textContent =
+  document.getElementById("detailName")
+    .textContent=
+    product.name;
+
+  document.getElementById("detailDescription")
+    .textContent=
     product.description ||
     "Quality replacement remote.";
 
-  document.getElementById("modalPrice").textContent =
+  document.getElementById("detailPrice")
+    .textContent=
     "Rs. " + product.price;
 
-  const message =
-    "Assalam-o-Alaikum, mujhe " +
-    product.name +
-    " chahiye.";
+  renderDetailGallery(product);
 
-  document.getElementById("modalOrder").href =
+  /*
+     WhatsApp message:
+     Product name + price + image link
+  */
+
+  let message=
+    "Assalam-o-Alaikum,\n\n" +
+    "Mujhe ye remote chahiye:\n" +
+    "Product: " + product.name + "\n" +
+    "Price: Rs. " + product.price;
+
+  if(product.images.length){
+
+    message +=
+      "\n\nProduct Image:\n" +
+      product.images[0];
+
+  }
+
+  message +=
+    "\n\nPlease order confirm kar dein.";
+
+  document.getElementById("detailOrder").href=
     "https://wa.me/923072335550?text=" +
     encodeURIComponent(message);
 
-  renderModalGallery();
-
-  document.getElementById("productModal")
+  document.getElementById("productPage")
     .classList.add("show");
 
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow="hidden";
+
+  window.scrollTo(0,0);
 
 }
 
 
 /* =========================================================
-   MODAL GALLERY
+   DETAIL GALLERY
 ========================================================= */
 
-function renderModalGallery(){
+function renderDetailGallery(product){
 
-  const gallery =
-    document.getElementById("modalGallery");
+  const gallery=
+    document.getElementById("detailGallery");
 
-  gallery.innerHTML = "";
+  gallery.innerHTML="";
 
-  if(!modalProduct ||
-     !modalProduct.images ||
-     modalProduct.images.length === 0){
+  if(!product.images.length){
 
-    gallery.innerHTML =
-      "<div style='font-size:90px;'>📺</div>";
+    gallery.innerHTML=
+      "<div style='font-size:100px;'>📺</div>";
 
     return;
-
   }
 
-  modalProduct.images.forEach((imgUrl,i)=>{
+  product.images.forEach((img,i)=>{
 
-    gallery.innerHTML += `
+    gallery.innerHTML+=`
 
       <img
-        src="${escapeHTML(imgUrl)}"
-        class="${i===0 ? "active" : ""}"
-        alt="${escapeHTML(modalProduct.name)}"
+        src="${escapeHTML(img)}"
+        class="${i===0 ? "active":""}"
+        alt="${escapeHTML(product.name)}"
         draggable="false"
         onerror="this.style.display='none';"
       >
@@ -1930,113 +1927,90 @@ function renderModalGallery(){
 
   });
 
-  if(modalProduct.images.length > 1){
+  if(product.images.length>1){
 
-    let dots = "";
+    gallery.innerHTML+=
+      `<div class="detail-swipe">
+        ← Swipe to see more images →
+      </div>`;
 
-    modalProduct.images.forEach((img,i)=>{
+    setupDetailSwipe(gallery,product);
 
-      dots += `
-        <div
-          class="dot modal-dot-${i} ${i===0 ? "active" : ""}">
-        </div>
-      `;
-
-    });
-
-    gallery.innerHTML += `
-      <div class="modal-dots">
-        ${dots}
-      </div>
-    `;
-
-  }
-
-  setupSwipe(gallery,0,true);
-
-}
-
-
-/* =========================================================
-   MODAL SLIDE
-========================================================= */
-
-function changeModalSlide(direction){
-
-  if(!modalProduct ||
-     !modalProduct.images ||
-     modalProduct.images.length <= 1){
-    return;
-  }
-
-  const images =
-    document.querySelectorAll("#modalGallery > img");
-
-  const dots =
-    document.querySelectorAll(".modal-dots .dot");
-
-  images[modalCurrentIndex]
-    .classList.remove("active");
-
-  if(dots[modalCurrentIndex]){
-    dots[modalCurrentIndex]
-      .classList.remove("active");
-  }
-
-  modalCurrentIndex += direction;
-
-  if(modalCurrentIndex >= images.length){
-    modalCurrentIndex = 0;
-  }
-
-  if(modalCurrentIndex < 0){
-    modalCurrentIndex = images.length - 1;
-  }
-
-  images[modalCurrentIndex]
-    .classList.add("active");
-
-  if(dots[modalCurrentIndex]){
-    dots[modalCurrentIndex]
-      .classList.add("active");
   }
 
 }
 
 
 /* =========================================================
-   CLOSE PRODUCT
+   DETAIL SWIPE
 ========================================================= */
 
-function closeProductModal(){
+function setupDetailSwipe(gallery,product){
 
-  document.getElementById("productModal")
-    .classList.remove("show");
+  let startX=0;
+  let startY=0;
+  let current=0;
 
-  document.body.style.overflow = "";
+  gallery.addEventListener("touchstart",e=>{
 
-}
+    startX=e.touches[0].clientX;
+    startY=e.touches[0].clientY;
 
+  },{passive:true});
 
-/* Close when clicking outside */
-document.getElementById("productModal")
-  .addEventListener("click",function(e){
+  gallery.addEventListener("touchend",e=>{
 
-    if(e.target === this){
-      closeProductModal();
+    let endX=e.changedTouches[0].clientX;
+    let endY=e.changedTouches[0].clientY;
+
+    let dx=endX-startX;
+    let dy=endY-startY;
+
+    if(
+      Math.abs(dx)>40 &&
+      Math.abs(dx)>Math.abs(dy)
+    ){
+
+      current += dx<0 ? 1 : -1;
+
+      if(current>=product.images.length){
+        current=0;
+      }
+
+      if(current<0){
+        current=product.images.length-1;
+      }
+
+      const images=
+        gallery.querySelectorAll("img");
+
+      images.forEach(img =>
+        img.classList.remove("active")
+      );
+
+      images[current].classList.add("active");
+
     }
 
-  });
+  },{passive:true});
+
+}
 
 
-/* Close with ESC */
-document.addEventListener("keydown",function(e){
+/* =========================================================
+   CLOSE PRODUCT PAGE
+========================================================= */
 
-  if(e.key === "Escape"){
-    closeProductModal();
-  }
+function closeProductPage(){
 
-});
+  document.getElementById("productPage")
+    .classList.remove("show");
+
+  document.body.style.overflow="";
+
+  currentProduct=null;
+
+}
 
 
 /* =========================================================
@@ -2045,54 +2019,48 @@ document.addEventListener("keydown",function(e){
 
 function setLanguage(language){
 
-  currentLanguage = language;
+  currentLanguage=language;
 
-  document.documentElement.lang =
-    language === "ur" ? "ur" : "en";
+  document.documentElement.lang=
+    language==="ur" ? "ur" : "en";
 
   document.querySelectorAll("[data-en]")
-    .forEach(element=>{
+  .forEach(element=>{
 
-      const text =
-        element.getAttribute(
-          language === "ur"
-          ? "data-ur"
-          : "data-en"
-        );
+    const text=
+      element.getAttribute(
+        language==="ur"
+        ? "data-ur"
+        : "data-en"
+      );
 
-      if(text !== null){
+    if(text!==null){
 
-        if(element.tagName === "INPUT"){
+      element.textContent=text;
 
-          element.placeholder = text;
+    }
 
-        }else{
+  });
 
-          element.textContent = text;
-
-        }
-
-      }
-
-    });
-
-  const searchInput =
+  const search=
     document.getElementById("searchInput");
 
-  if(language === "ur"){
+  if(language==="ur"){
 
-    searchInput.placeholder =
+    search.placeholder=
       "ریموٹ، برانڈ یا ماڈل تلاش کریں...";
 
-    document.getElementById("deliveryText").innerHTML =
+    document.getElementById("deliveryText")
+      .innerHTML=
       "🚚 <strong>کراچی:</strong> 1 گھنٹے کی ڈیلیوری | 🇵🇰 پورے پاکستان میں ڈیلیوری دستیاب";
 
   }else{
 
-    searchInput.placeholder =
-      "Search by remote, brand or model...";
+    search.placeholder=
+      "Search remote, brand or model...";
 
-    document.getElementById("deliveryText").innerHTML =
+    document.getElementById("deliveryText")
+      .innerHTML=
       "🚚 <strong>Karachi:</strong> 1 Hour Delivery | 🇵🇰 All Pakistan Delivery Available";
 
   }
@@ -2105,6 +2073,40 @@ function setLanguage(language){
 ========================================================= */
 
 fetchProductsFromSheet();
+
+
+/*
+   Products load hone ke baad IDs assign karne ke liye
+   renderProducts ko safely wrap kar rahe hain.
+*/
+
+const originalRenderProducts=renderProducts;
+
+renderProducts=function(list=products){
+
+  if(products.length){
+
+    products.forEach((product,index)=>{
+
+      if(!product._id){
+
+        product._id=
+          "remote-" +
+          index +
+          "-" +
+          Math.random()
+          .toString(36)
+          .substring(2,8);
+
+      }
+
+    });
+
+  }
+
+  originalRenderProducts(list);
+
+};
 
 </script>
 
