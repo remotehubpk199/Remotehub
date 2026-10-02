@@ -1035,7 +1035,6 @@ footer{
 
   <div class="detail-container">
 
-
     <!-- IMAGE -->
 
     <div class="detail-gallery">
@@ -1104,7 +1103,8 @@ footer{
         id="detailOrder"
         class="order-btn"
         href="#"
-        target="_blank">
+        target="_blank"
+        rel="noopener">
         Order on WhatsApp
       </a>
 
@@ -1466,6 +1466,11 @@ async function loadProducts(){
 
     renderProducts(products);
 
+
+    /* CHECK IF A PRODUCT LINK WAS OPENED */
+
+    openProductFromURL();
+
   }
   catch(error){
 
@@ -1644,10 +1649,7 @@ function filterBrand(brand,element){
         normalizeSearch(brand);
 
 
-      return (
-        text.split(" ").includes(target) ||
-        text.includes(" " + target + " ")
-      );
+      return text.split(" ").includes(target);
 
     });
 
@@ -1715,7 +1717,7 @@ function showAllProducts(button){
 
 
 /* =========================================================
-   ESCAPE
+   ESCAPE HTML
 ========================================================= */
 
 function escapeHTML(value){
@@ -1815,7 +1817,6 @@ function renderProducts(list){
 
 /* =========================================================
    PREMIUM DESCRIPTION
-   Always creates premium layout
 ========================================================= */
 
 function makePremiumDescription(product){
@@ -1917,10 +1918,29 @@ function makePremiumDescription(product){
 
 
 /* =========================================================
+   PRODUCT URL
+========================================================= */
+
+function getProductURL(product){
+
+  const baseURL =
+    window.location.origin +
+    window.location.pathname;
+
+  return (
+    baseURL +
+    "#product=" +
+    encodeURIComponent(product.id)
+  );
+
+}
+
+
+/* =========================================================
    OPEN PRODUCT
 ========================================================= */
 
-function openProductPage(id){
+function openProductPage(id, updateURL = true){
 
   savedProductsScroll =
     window.scrollY;
@@ -1943,11 +1963,15 @@ function openProductPage(id){
     product;
 
 
+  /* PRODUCT CATEGORY */
+
   document.getElementById(
     "detailCategory"
   ).textContent =
     detectBrand(product);
 
+
+  /* PRODUCT NAME */
 
   document.getElementById(
     "detailName"
@@ -1955,11 +1979,15 @@ function openProductPage(id){
     product.name;
 
 
+  /* PRODUCT PRICE */
+
   document.getElementById(
     "detailPrice"
   ).textContent =
     "Rs. " + product.price;
 
+
+  /* PRODUCT DESCRIPTION */
 
   document.getElementById(
     "detailDescription"
@@ -1967,20 +1995,32 @@ function openProductPage(id){
     makePremiumDescription(product);
 
 
+  /* PRODUCT GALLERY */
+
   renderDetailGallery(product);
 
 
-  let message =
+  /* =====================================================
+     WHATSAPP PRODUCT LINK
+  ===================================================== */
+
+  const productURL =
+    getProductURL(product);
+
+
+  const message =
     "Assalam-o-Alaikum,\n\n" +
-    "Mujhe ye remote chahiye:\n" +
+    "Mujhe ye remote order karna hai.\n\n" +
     "Product: " +
     product.name +
-    "\nPrice: Rs. " +
-    product.price;
-
-
-  message +=
-    "\n\nPlease order confirm kar dein.";
+    "\n" +
+    "Price: Rs. " +
+    product.price +
+    "\n\n" +
+    "Product Link:\n" +
+    productURL +
+    "\n\n" +
+    "Please order confirm kar dein.";
 
 
   document.getElementById(
@@ -1990,12 +2030,33 @@ function openProductPage(id){
     encodeURIComponent(message);
 
 
+  /* =====================================================
+     UPDATE BROWSER URL
+  ===================================================== */
+
+  if(updateURL){
+
+    history.pushState(
+      {
+        productId:id
+      },
+      "",
+      productURL
+    );
+
+  }
+
+
+  /* SHOW PRODUCT PAGE */
+
   document.getElementById(
     "productPage"
   ).classList.add("show");
 
 
-  document.body.classList.add("no-scroll");
+  document.body.classList.add(
+    "no-scroll"
+  );
 
 
   document.getElementById(
@@ -2006,6 +2067,117 @@ function openProductPage(id){
   resetZoom();
 
 }
+
+
+/* =========================================================
+   OPEN PRODUCT FROM URL
+========================================================= */
+
+function openProductFromURL(){
+
+  const hash =
+    window.location.hash;
+
+
+  if(!hash){
+
+    return;
+
+  }
+
+
+  if(
+    !hash.startsWith("#product=")
+  ){
+
+    return;
+
+  }
+
+
+  const id =
+    decodeURIComponent(
+      hash.substring("#product=".length)
+    );
+
+
+  const product =
+    products.find(
+      item => item.id === id
+    );
+
+
+  if(!product){
+
+    return;
+
+  }
+
+
+  setTimeout(()=>{
+
+    openProductPage(
+      id,
+      false
+    );
+
+  },100);
+
+}
+
+
+/* =========================================================
+   BROWSER BACK / FORWARD
+========================================================= */
+
+window.addEventListener(
+  "popstate",
+  function(){
+
+    const hash =
+      window.location.hash;
+
+
+    if(
+      hash.startsWith("#product=")
+    ){
+
+      const id =
+        decodeURIComponent(
+          hash.substring("#product=".length)
+        );
+
+
+      if(
+        products.some(
+          product => product.id === id
+        )
+      ){
+
+        openProductPage(
+          id,
+          false
+        );
+
+      }
+
+    }
+    else{
+
+      document.getElementById(
+        "productPage"
+      ).classList.remove("show");
+
+      document.body.classList.remove(
+        "no-scroll"
+      );
+
+      currentProduct = null;
+
+    }
+
+  }
+);
 
 
 /* =========================================================
@@ -2025,6 +2197,16 @@ function closeProductPage(){
 
 
   currentProduct = null;
+
+
+  /* REMOVE PRODUCT HASH */
+
+  history.pushState(
+    null,
+    "",
+    window.location.pathname +
+    window.location.search
+  );
 
 
   setTimeout(()=>{
@@ -2088,6 +2270,7 @@ function renderDetailGallery(product){
         <img
           src="${escapeHTML(image)}"
           alt="Remote image"
+          loading="lazy"
         >
 
       </div>
@@ -2496,4 +2679,4 @@ loadProducts();
 </script>
 
 </body>
-        </html>
+  </html>
