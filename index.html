@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Remote Hub | Smart Remotes</title>
+<title>Remotehub | Premium Remote Store</title>
 
 <style>
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,Helvetica,sans-serif;
 }
 
 html{
@@ -19,739 +18,649 @@ html{
 }
 
 body{
-  background:#f5f7fa;
-  color:#101827;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f5f5;
+  color:#111;
 }
 
-/* ================= TOP BAR ================= */
-
-.topbar{
-  background:#061321;
-  color:white;
-  padding:10px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:15px;
-  font-size:14px;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
-.topbar strong{
-  color:#ffb000;
+button,
+input{
+  font-family:inherit;
 }
 
-.lang{
-  white-space:nowrap;
-}
-
-.lang span{
-  color:#ffb000;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* ================= HEADER ================= */
-
+/* HEADER */
 header{
-  background:#020b14;
-  color:white;
-  padding:18px 6%;
-  display:flex;
-  align-items:center;
-  gap:25px;
+  background:#111;
+  color:#fff;
+  padding:15px 20px;
   position:sticky;
   top:0;
   z-index:1000;
+  box-shadow:0 3px 15px rgba(0,0,0,.18);
 }
 
-.logo{
-  font-size:30px;
-  font-weight:800;
-  white-space:nowrap;
-}
-
-.logo span{
-  color:#ffb000;
-}
-
-.tagline{
-  font-size:12px;
-  color:#bfc8d2;
-  margin-top:4px;
-}
-
-.search{
-  flex:1;
-  max-width:650px;
+.header-inner{
+  max-width:1200px;
   margin:auto;
-  position:relative;
-}
-
-.search input{
-  width:100%;
-  padding:14px 55px 14px 16px;
-  border:0;
-  outline:0;
-  border-radius:8px;
-  font-size:15px;
-}
-
-.search button{
-  position:absolute;
-  right:0;
-  top:0;
-  height:100%;
-  width:52px;
-  border:0;
-  background:#ffb000;
-  border-radius:0 8px 8px 0;
-  cursor:pointer;
-  font-size:18px;
-}
-
-.whatsapp{
-  background:#20c76a;
-  color:white;
-  text-decoration:none;
-  padding:12px 17px;
-  border-radius:8px;
-  font-weight:bold;
-  white-space:nowrap;
-}
-
-/* ================= NAV ================= */
-
-nav{
-  background:#061426;
-  padding:14px 6%;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-nav a:hover{
-  color:#ffb000;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  min-height:500px;
-  padding:70px 7%;
   display:flex;
   align-items:center;
-  color:white;
-  background:radial-gradient(circle at 75% 50%,#07516f,#020b14 60%);
-}
-
-.hero-content{
-  max-width:750px;
-}
-
-.hero small{
-  color:#ffb000;
-  font-weight:bold;
-  letter-spacing:3px;
-}
-
-.hero h1{
-  font-size:56px;
-  line-height:1.05;
-  margin:18px 0;
-}
-
-.hero h1 span{
-  color:#ffb000;
-}
-
-.hero p{
-  color:#d9e0e8;
-  font-size:18px;
-  line-height:1.7;
-}
-
-.delivery-row{
-  margin-top:22px;
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.delivery-box{
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.15);
-  padding:12px 16px;
-  border-radius:8px;
-  font-size:14px;
-}
-
-.delivery-box strong{
-  color:#ffb000;
-}
-
-.buttons{
-  margin-top:30px;
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:15px 25px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.primary{
-  background:#ffb000;
-  color:#071827;
-}
-
-.secondary{
-  border:1px solid #ffb000;
-  color:white;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-  background:white;
-  padding:35px 7%;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
+  justify-content:space-between;
   gap:20px;
 }
 
-.feature{
-  text-align:center;
-  padding:15px;
+.logo{
+  font-size:25px;
+  font-weight:800;
+  letter-spacing:.5px;
 }
 
-.feature-icon{
-  font-size:30px;
-  margin-bottom:10px;
+.logo span{
+  color:#d4af37;
 }
 
-.feature p{
-  color:#687385;
-  margin-top:5px;
+.nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+.nav a{
+  color:#fff;
   font-size:14px;
 }
 
-/* ================= SECTIONS ================= */
+.nav a:hover{
+  color:#d4af37;
+}
 
+/* HERO */
+.hero{
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?auto=format&fit=crop&w=1600&q=80");
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  min-height:430px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.hero small{
+  color:#d4af37;
+  font-weight:700;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  font-size:48px;
+  margin:15px 0;
+}
+
+.hero p{
+  font-size:17px;
+  line-height:1.7;
+  color:#ddd;
+}
+
+.hero-btn{
+  display:inline-block;
+  margin-top:25px;
+  background:#d4af37;
+  color:#111;
+  padding:13px 25px;
+  border-radius:30px;
+  font-weight:700;
+}
+
+/* SEARCH */
+.search-area{
+  max-width:1000px;
+  margin:-35px auto 30px;
+  position:relative;
+  z-index:10;
+  padding:0 15px;
+}
+
+.search-box{
+  background:#fff;
+  padding:10px;
+  border-radius:50px;
+  box-shadow:0 8px 30px rgba(0,0,0,.15);
+  display:flex;
+  align-items:center;
+}
+
+.search-box input{
+  flex:1;
+  border:0;
+  outline:0;
+  font-size:16px;
+  padding:12px 18px;
+  background:transparent;
+}
+
+.search-box button{
+  border:0;
+  background:#111;
+  color:#fff;
+  border-radius:40px;
+  padding:13px 24px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.search-box button:hover{
+  background:#d4af37;
+  color:#111;
+}
+
+/* SECTIONS */
 .section{
-  padding:65px 7%;
+  max-width:1200px;
+  margin:50px auto;
+  padding:0 20px;
 }
 
 .title{
   text-align:center;
-  margin-bottom:35px;
+  margin-bottom:30px;
 }
 
 .title small{
-  color:#ff9f00;
-  font-weight:bold;
+  color:#b18a16;
+  font-weight:800;
   letter-spacing:2px;
 }
 
 .title h2{
-  font-size:35px;
+  font-size:30px;
   margin-top:8px;
 }
 
-/* ================= CATEGORIES ================= */
-
+/* CATEGORIES */
 .categories{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:15px;
+}
+
+.category{
+  background:#fff;
+  border-radius:14px;
+  padding:22px 12px;
+  text-align:center;
+  cursor:pointer;
+  border:1px solid #eee;
+  transition:.25s;
+  box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+.category:hover{
+  transform:translateY(-4px);
+  border-color:#d4af37;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.category-icon{
+  width:55px;
+  height:55px;
+  margin:0 auto 10px;
+  border-radius:50%;
+  background:#111;
+  color:#d4af37;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:12px;
+}
+
+.category h3{
+  font-size:14px;
+}
+
+/* FILTER BUTTONS */
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:25px;
+  justify-content:center;
+}
+
+.filter-btn{
+  border:1px solid #ddd;
+  background:#fff;
+  padding:9px 15px;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+  background:#111;
+  color:#fff;
+  border-color:#111;
+}
+
+/* PRODUCTS */
+.products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
 }
 
-.category{
-  background:white;
-  padding:35px 20px;
-  text-align:center;
-  border-radius:14px;
-  box-shadow:0 5px 25px rgba(0,0,0,.07);
-  cursor:pointer;
-  transition:.3s;
-}
-
-.category:hover{
-  transform:translateY(-5px);
-}
-
-.category .icon{
-  font-size:45px;
-  margin-bottom:15px;
-}
-
-.category p{
-  color:#687385;
-  margin-top:8px;
-  font-size:14px;
-}
-
-/* ================= FILTER ================= */
-
-.product-tools{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-bottom:30px;
-}
-
-.filter-btn{
-  border:1px solid #d8dee6;
-  background:white;
-  padding:10px 18px;
-  border-radius:20px;
-  cursor:pointer;
-  font-weight:bold;
-}
-
-.filter-btn.active,
-.filter-btn:hover{
-  background:#ffb000;
-  border-color:#ffb000;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:22px;
-}
-
 .product{
-  background:white;
-  border-radius:14px;
+  background:#fff;
+  border-radius:16px;
   overflow:hidden;
-  box-shadow:0 5px 25px rgba(0,0,0,.07);
-  transition:.3s;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
   cursor:pointer;
+  transition:.25s;
 }
 
 .product:hover{
   transform:translateY(-5px);
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
 }
 
 .product-image{
-  height:250px;
-  background:#edf1f5;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  height:230px;
+  background:#eee;
   overflow:hidden;
-  touch-action:pan-y;
+  position:relative;
 }
 
 .product-image img{
   width:100%;
   height:100%;
   object-fit:contain;
-  display:none;
-  user-select:none;
-  -webkit-user-drag:none;
+  transition:.3s;
 }
 
-.product-image img.active{
-  display:block;
+.product:hover .product-image img{
+  transform:scale(1.04);
 }
-
-.swipe-hint{
-  position:absolute;
-  bottom:10px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,.55);
-  color:white;
-  padding:5px 10px;
-  border-radius:20px;
-  font-size:11px;
-}
-
-/* ================= PRODUCT INFO ================= */
 
 .product-info{
-  padding:18px;
+  padding:15px;
 }
 
-.product-info h3{
-  margin-bottom:8px;
-  font-size:18px;
+.product-category{
+  color:#b18a16;
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1px;
 }
 
-.product-info p{
-  color:#687385;
+.product-name{
+  font-size:16px;
+  font-weight:700;
+  margin:7px 0;
+  min-height:40px;
+}
+
+.product-price{
+  font-size:19px;
+  font-weight:800;
+  color:#111;
+}
+
+.view-product{
+  display:block;
+  margin-top:12px;
+  background:#111;
+  color:#fff;
+  padding:10px;
+  text-align:center;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:700;
+}
+
+/* LOADING */
+.loading{
+  text-align:center;
+  padding:50px;
+  color:#777;
+}
+
+/* EMPTY */
+.empty{
+  grid-column:1/-1;
+  text-align:center;
+  padding:60px 20px;
+  color:#777;
+}
+
+/* CONTACT */
+.contact-box{
+  background:#111;
+  color:#fff;
+  border-radius:20px;
+  padding:40px 25px;
+  text-align:center;
+}
+
+.contact-box h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.contact-box p{
+  color:#ccc;
+  line-height:1.7;
+}
+
+.contact-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
+}
+
+.contact-buttons a{
+  padding:11px 18px;
+  border:1px solid #444;
+  border-radius:30px;
+  background:#1c1c1c;
+  color:#fff;
   font-size:14px;
-  line-height:1.5;
-  min-height:42px;
 }
 
-.price{
-  font-size:21px;
-  font-weight:bold;
-  margin:15px 0;
+.contact-buttons a:hover{
+  background:#d4af37;
+  color:#111;
+  border-color:#d4af37;
 }
 
-/* ================= FULL PRODUCT PAGE ================= */
+/* FOOTER */
+footer{
+  background:#090909;
+  color:#aaa;
+  text-align:center;
+  padding:25px 15px;
+  margin-top:60px;
+  font-size:13px;
+}
 
+/* PRODUCT DETAIL */
 .product-page{
-  display:none;
   position:fixed;
   inset:0;
+  background:#fff;
   z-index:5000;
-  background:#f5f7fa;
   overflow-y:auto;
+  display:none;
 }
 
 .product-page.show{
   display:block;
 }
 
-.product-page-header{
-  background:#020b14;
-  color:white;
-  padding:15px 6%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+.detail-header{
   position:sticky;
   top:0;
-  z-index:10;
+  z-index:20;
+  background:#111;
+  color:#fff;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
 .back-btn{
+  background:#fff;
+  color:#111;
   border:0;
-  background:white;
-  color:#020b14;
-  padding:10px 17px;
-  border-radius:8px;
-  font-weight:bold;
+  padding:9px 15px;
+  border-radius:25px;
   cursor:pointer;
+  font-weight:700;
 }
 
-.product-detail{
-  max-width:1100px;
-  margin:35px auto;
-  background:white;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 5px 30px rgba(0,0,0,.1);
+.detail-header-title{
+  font-weight:700;
+}
+
+.detail-container{
+  max-width:1150px;
+  margin:auto;
+  padding:30px 20px 60px;
   display:grid;
   grid-template-columns:1fr 1fr;
+  gap:45px;
 }
 
 .detail-gallery{
-  background:#edf1f5;
-  min-height:560px;
   position:relative;
+}
+
+.detail-image-box{
+  height:520px;
+  background:#f2f2f2;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  touch-action:none;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
-  touch-action:pan-y;
 }
 
-.detail-gallery img{
+.detail-main-image{
   width:100%;
-  height:560px;
+  height:100%;
   object-fit:contain;
-  display:none;
+  transform-origin:center center;
   user-select:none;
   -webkit-user-drag:none;
+  transition:transform .08s linear;
 }
 
-.detail-gallery img.active{
-  display:block;
-}
-
-.detail-swipe{
+.zoom-controls{
   position:absolute;
+  right:15px;
   bottom:15px;
-  left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,.6);
-  color:white;
-  padding:7px 14px;
-  border-radius:20px;
-  font-size:12px;
+  display:flex;
+  gap:7px;
+  z-index:5;
+}
+
+.zoom-controls button{
+  width:40px;
+  height:40px;
+  border:0;
+  border-radius:50%;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.zoom-controls button:hover{
+  background:#d4af37;
+  color:#111;
+}
+
+.detail-thumbs{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+  overflow-x:auto;
+}
+
+.detail-thumb{
+  width:70px;
+  height:70px;
+  background:#f2f2f2;
+  border-radius:10px;
+  overflow:hidden;
+  cursor:pointer;
+  border:2px solid transparent;
+  flex:none;
+}
+
+.detail-thumb.active{
+  border-color:#d4af37;
+}
+
+.detail-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
 }
 
 .detail-info{
-  padding:55px 45px;
+  padding:10px 0;
 }
 
 .detail-category{
-  color:#ff9f00;
+  color:#b18a16;
   font-size:13px;
-  font-weight:bold;
+  font-weight:800;
   text-transform:uppercase;
-  letter-spacing:2px;
+  letter-spacing:1.5px;
 }
 
-.detail-info h1{
-  font-size:36px;
+.detail-name{
+  font-size:35px;
+  line-height:1.2;
   margin:12px 0 18px;
 }
 
 .detail-description{
-  color:#687385;
-  line-height:1.8;
+  color:#555;
   font-size:16px;
+  line-height:1.8;
+  white-space:pre-line;
 }
 
 .detail-price{
-  font-size:32px;
-  font-weight:bold;
+  font-size:30px;
+  font-weight:800;
   margin:25px 0;
 }
 
-.detail-delivery{
-  background:#f5f7fa;
-  padding:15px;
-  border-radius:10px;
-  margin-bottom:20px;
-  line-height:1.8;
+.order-btn{
+  display:inline-block;
+  background:#111;
+  color:#fff;
+  padding:15px 28px;
+  border-radius:30px;
+  font-weight:800;
 }
 
-.detail-order{
-  display:block;
-  width:100%;
-  background:#20c76a;
-  color:white;
-  text-align:center;
-  text-decoration:none;
-  padding:16px;
-  border-radius:9px;
-  font-weight:bold;
-  font-size:17px;
+.order-btn:hover{
+  background:#d4af37;
+  color:#111;
 }
 
-/* ================= ABOUT ================= */
-
-.about{
-  background:#071827;
-  color:white;
-}
-
-.about-content{
-  max-width:850px;
-  margin:auto;
-  text-align:center;
-}
-
-.about p{
-  color:#cbd5df;
-  line-height:1.8;
-  margin-top:15px;
-}
-
-/* ================= CONTACT ================= */
-
-.contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
-}
-
-.contact-card{
-  background:white;
-  padding:30px;
-  border-radius:14px;
-  box-shadow:0 5px 25px rgba(0,0,0,.07);
-}
-
-.contact-card a{
-  display:block;
-  color:#071827;
-  text-decoration:none;
-  margin:15px 0;
-}
-
-.social{
-  display:flex;
-  gap:10px;
-  margin-top:20px;
-}
-
-.social a{
-  background:#071827;
-  color:white;
-  padding:10px 15px;
-  border-radius:7px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#020b14;
-  color:white;
-  text-align:center;
-  padding:25px;
-}
-
-/* ================= FLOAT WHATSAPP ================= */
-
-.float-whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#20c76a;
-  color:white;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:27px;
-  text-decoration:none;
-  z-index:999;
-}
-
-/* ================= NO RESULTS ================= */
-
-.no-results{
-  grid-column:1/-1;
-  text-align:center;
-  padding:50px 20px;
-  background:white;
-  border-radius:14px;
-  color:#687385;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:900px){
-
-  header{
-    flex-wrap:wrap;
-  }
-
-  .search{
-    order:3;
-    flex-basis:100%;
-    max-width:none;
-  }
-
-  .features,
-  .categories,
+/* RESPONSIVE */
+@media(max-width:1000px){
   .products{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .product-detail{
-    grid-template-columns:1fr;
-    margin:15px;
-  }
-
-  .detail-gallery{
-    min-height:400px;
-  }
-
-  .detail-gallery img{
-    height:400px;
-  }
-
-  .detail-info{
-    padding:35px 25px;
+    grid-template-columns:repeat(3,1fr);
   }
 }
 
-@media(max-width:600px){
-
-  .topbar{
-    font-size:11px;
-    padding:9px 4%;
+@media(max-width:700px){
+  .header-inner{
+    flex-direction:column;
+    gap:10px;
   }
 
-  header{
-    padding:15px 4%;
-  }
-
-  .logo{
-    font-size:25px;
-  }
-
-  nav{
-    gap:15px;
-    font-size:13px;
+  .nav{
+    gap:12px;
   }
 
   .hero{
-    padding:55px 6%;
+    min-height:390px;
   }
 
   .hero h1{
-    font-size:39px;
+    font-size:35px;
   }
 
-  .hero p{
-    font-size:16px;
-  }
-
-  .features,
-  .categories,
-  .products,
-  .contact{
-    grid-template-columns:1fr;
-  }
-
-  .section{
-    padding:50px 5%;
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
   }
 
   .product-image{
-    height:290px;
+    height:180px;
   }
 
-  .product-detail{
-    margin:0;
-    border-radius:0;
+  .product-info{
+    padding:12px;
   }
 
-  .detail-gallery{
-    min-height:330px;
+  .product-name{
+    font-size:14px;
   }
 
-  .detail-gallery img{
+  .product-price{
+    font-size:17px;
+  }
+
+  .detail-container{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .detail-image-box{
+    height:400px;
+  }
+
+  .detail-name{
+    font-size:28px;
+  }
+}
+
+@media(max-width:450px){
+  .nav a{
+    font-size:12px;
+  }
+
+  .search-box{
+    padding:6px;
+  }
+
+  .search-box input{
+    min-width:0;
+    padding:10px;
+    font-size:14px;
+  }
+
+  .search-box button{
+    padding:11px 15px;
+  }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .product-image{
+    height:160px;
+  }
+
+  .detail-image-box{
     height:330px;
-  }
-
-  .detail-info{
-    padding:28px 20px 40px;
-  }
-
-  .detail-info h1{
-    font-size:27px;
-  }
-
-  .detail-price{
-    font-size:27px;
-  }
-
-  .product-page-header{
-    padding:12px 15px;
-  }
-
-  .float-whatsapp{
-    right:15px;
-    bottom:15px;
   }
 }
 </style>
@@ -759,405 +668,344 @@ footer{
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-
-  <div id="deliveryText">
-    🚚 <strong>Karachi:</strong> 1 Hour Delivery | 🇵🇰 All Pakistan Delivery Available
-  </div>
-
-  <div class="lang">
-    <span onclick="setLanguage('en')">English</span>
-    |
-    <span onclick="setLanguage('ur')">اردو</span>
-  </div>
-
-</div>
-
 <!-- HEADER -->
 <header>
+  <div class="header-inner">
 
-  <div>
-    <div class="logo">Remote<span>hub</span></div>
-
-    <div class="tagline"
-         data-en="Smart Remotes for Smarter Living"
-         data-ur="اسمارٹ ریموٹس، بہتر زندگی کے لیے">
-      Smart Remotes for Smarter Living
+    <div class="logo">
+      Remote<span>hub</span>
     </div>
-  </div>
 
-  <div class="search">
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#categories">Brands</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <small data-en="PREMIUM REMOTES" data-ur="پریمیم ریموٹس">
+      PREMIUM REMOTES
+    </small>
+
+    <h1 data-en="Find Your Perfect Remote"
+        data-ur="اپنا بہترین ریموٹ تلاش کریں">
+      Find Your Perfect Remote
+    </h1>
+
+    <p data-en="Premium replacement remotes for TVs, ACs, Android Boxes and more. Fast delivery in Karachi."
+       data-ur="TV، AC، Android Box اور دیگر ڈیوائسز کے لیے پریمیم ریموٹس۔ کراچی میں تیز ڈیلیوری۔">
+      Premium replacement remotes for TVs, ACs, Android Boxes and more.
+      Fast delivery in Karachi.
+    </p>
+
+    <a href="#products" class="hero-btn">
+      Shop Now
+    </a>
+
+  </div>
+</section>
+
+
+<!-- SEARCH -->
+<div class="search-area">
+
+  <div class="search-box">
 
     <input
       id="searchInput"
       type="text"
-      placeholder="Search remote, brand or model..."
+      placeholder="Search remote by name or model..."
       oninput="searchProducts()"
     >
 
-    <button onclick="searchProducts()">🔍</button>
+    <button onclick="searchProducts()">
+      Search
+    </button>
 
   </div>
 
-  <a class="whatsapp"
-     href="https://wa.me/923072335550"
-     target="_blank">
-     💬 WhatsApp
-  </a>
+</div>
 
-</header>
 
-<!-- NAV -->
-<nav>
-
-  <a href="#home"
-     data-en="Home"
-     data-ur="ہوم">
-     Home
-  </a>
-
-  <a href="#categories"
-     data-en="Categories"
-     data-ur="کیٹیگریز">
-     Categories
-  </a>
-
-  <a href="#products"
-     data-en="Products"
-     data-ur="پروڈکٹس">
-     Products
-  </a>
-
-  <a href="#about"
-     data-en="About Us"
-     data-ur="ہمارے بارے میں">
-     About Us
-  </a>
-
-  <a href="#contact"
-     data-en="Contact"
-     data-ur="رابطہ">
-     Contact
-  </a>
-
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-
-  <div class="hero-content">
-
-    <small>REMOTE HUB</small>
-
-    <h1 data-en="Smart Remotes for Smarter Living"
-        data-ur="اسمارٹ ریموٹس، بہتر زندگی کے لیے">
-      Smart Remotes for <span>Smarter Living</span>
-    </h1>
-
-    <p data-en="Premium replacement remotes for TVs, ACs, Android Boxes and smart devices. Find your remote and order easily through WhatsApp."
-       data-ur="TV، AC، Android Box اور اسمارٹ ڈیوائسز کے لیے معیاری replacement remotes۔ اپنا ریموٹ تلاش کریں اور WhatsApp کے ذریعے آسانی سے آرڈر کریں۔">
-      Premium replacement remotes for TVs, ACs, Android Boxes and smart devices.
-      Find your remote and order easily through WhatsApp.
-    </p>
-
-    <div class="delivery-row">
-
-      <div class="delivery-box">
-        ⚡ <strong>Karachi</strong> — 1 Hour Delivery
-      </div>
-
-      <div class="delivery-box">
-        🇵🇰 <strong>Pakistan</strong> — Delivery Available
-      </div>
-
-      <div class="delivery-box">
-        💵 Cash on Delivery
-      </div>
-
-    </div>
-
-    <div class="buttons">
-
-      <a class="btn primary"
-         href="#products"
-         data-en="🛒 Shop Remotes"
-         data-ur="🛒 ریموٹس دیکھیں">
-         🛒 Shop Remotes
-      </a>
-
-      <a class="btn secondary"
-         href="https://wa.me/923072335550"
-         target="_blank"
-         data-en="💬 Order on WhatsApp"
-         data-ur="💬 WhatsApp پر آرڈر کریں">
-         💬 Order on WhatsApp
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FEATURES -->
-<section class="features">
-
-  <div class="feature">
-    <div class="feature-icon">✓</div>
-    <h3 data-en="Quality Products"
-        data-ur="معیاری مصنوعات">
-      Quality Products
-    </h3>
-    <p data-en="Reliable replacement remotes."
-       data-ur="قابل اعتماد replacement remotes۔">
-      Reliable replacement remotes.
-    </p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">📺</div>
-    <h3 data-en="Wide Compatibility"
-        data-ur="بہت سے برانڈز">
-      Wide Compatibility
-    </h3>
-    <p data-en="Remotes for multiple brands."
-       data-ur="مختلف برانڈز کے ریموٹس۔">
-      Remotes for multiple brands.
-    </p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">🚚</div>
-    <h3 data-en="Fast Delivery"
-        data-ur="تیز ڈیلیوری">
-      Fast Delivery
-    </h3>
-    <p data-en="1 hour delivery in Karachi."
-       data-ur="کراچی میں 1 گھنٹے کی ڈیلیوری۔">
-      1 hour delivery in Karachi.
-    </p>
-  </div>
-
-  <div class="feature">
-    <div class="feature-icon">🇵🇰</div>
-    <h3 data-en="All Pakistan"
-        data-ur="پورے پاکستان میں">
-      All Pakistan
-    </h3>
-    <p data-en="Delivery available across Pakistan."
-       data-ur="پورے پاکستان میں ڈیلیوری دستیاب ہے۔">
-      Delivery available across Pakistan.
-    </p>
-  </div>
-
-</section>
-
-<!-- CATEGORIES -->
+<!-- BRANDS -->
 <section class="section" id="categories">
 
   <div class="title">
-
-    <small data-en="SHOP BY CATEGORY"
-           data-ur="کیٹیگری کے مطابق خریدیں">
-      SHOP BY CATEGORY
+    <small data-en="SHOP BY BRAND" data-ur="برانڈ کے مطابق خریدیں">
+      SHOP BY BRAND
     </small>
 
-    <h2 data-en="Find Your Remote"
-        data-ur="اپنا ریموٹ تلاش کریں">
-      Find Your Remote
+    <h2 data-en="Choose Your Brand" data-ur="اپنا برانڈ منتخب کریں">
+      Choose Your Brand
     </h2>
-
   </div>
+
 
   <div class="categories">
 
-    <div class="category"
-         onclick="filterCategory('AC')">
-
-      <div class="icon">❄️</div>
-
-      <h3 data-en="AC Remotes"
-          data-ur="AC ریموٹس">
-        AC Remotes
-      </h3>
-
-      <p data-en="AC replacement remotes"
-         data-ur="AC کے replacement remotes">
-        AC replacement remotes
-      </p>
-
+    <div class="category" onclick="filterBrand('Samsung')">
+      <div class="category-icon">S</div>
+      <h3>Samsung</h3>
     </div>
 
-    <div class="category"
-         onclick="filterCategory('TV')">
-
-      <div class="icon">📺</div>
-
-      <h3 data-en="TV Remotes"
-          data-ur="TV ریموٹس">
-        TV Remotes
-      </h3>
-
-      <p data-en="Smart LED & TV remotes"
-         data-ur="Smart LED اور TV ریموٹس">
-        Smart LED & TV remotes
-      </p>
-
+    <div class="category" onclick="filterBrand('TCL')">
+      <div class="category-icon">TCL</div>
+      <h3>TCL</h3>
     </div>
 
-    <div class="category"
-         onclick="filterCategory('Android')">
-
-      <div class="icon">📦</div>
-
-      <h3 data-en="Android Box"
-          data-ur="Android Box">
-        Android Box
-      </h3>
-
-      <p data-en="Android TV box remotes"
-         data-ur="Android TV Box کے ریموٹس">
-        Android TV box remotes
-      </p>
-
+    <div class="category" onclick="filterBrand('Haier')">
+      <div class="category-icon">H</div>
+      <h3>Haier</h3>
     </div>
 
-    <div class="category"
-         onclick="filterCategory('Universal')">
+    <div class="category" onclick="filterBrand('Multynet')">
+      <div class="category-icon">M</div>
+      <h3>Multynet</h3>
+    </div>
 
-      <div class="icon">🎮</div>
+    <div class="category" onclick="filterBrand('Sony')">
+      <div class="category-icon">SONY</div>
+      <h3>Sony</h3>
+    </div>
 
-      <h3 data-en="Universal"
-          data-ur="یونیورسل">
-        Universal
-      </h3>
+    <div class="category" onclick="filterBrand('LG')">
+      <div class="category-icon">LG</div>
+      <h3>LG</h3>
+    </div>
 
-      <p data-en="Universal replacement remotes"
-         data-ur="Universal replacement remotes">
-        Universal replacement remotes
-      </p>
+    <div class="category" onclick="filterBrand('Dawlance')">
+      <div class="category-icon">D</div>
+      <h3>Dawlance</h3>
+    </div>
 
+    <div class="category" onclick="filterBrand('Gree')">
+      <div class="category-icon">G</div>
+      <h3>Gree</h3>
+    </div>
+
+    <div class="category" onclick="filterBrand('Orient')">
+      <div class="category-icon">O</div>
+      <h3>Orient</h3>
+    </div>
+
+    <div class="category" onclick="filterBrand('Midea')">
+      <div class="category-icon">M</div>
+      <h3>Midea</h3>
+    </div>
+
+    <div class="category" onclick="filterBrand('Ecostar')">
+      <div class="category-icon">E</div>
+      <h3>Ecostar</h3>
+    </div>
+
+    <div class="category" onclick="filterBrand('Universal')">
+      <div class="category-icon">U</div>
+      <h3>Universal</h3>
+    </div>
+
+    <div class="category" onclick="filterBrand('Android')">
+      <div class="category-icon">TV</div>
+      <h3>Android Box</h3>
     </div>
 
   </div>
 
 </section>
+
 
 <!-- PRODUCTS -->
 <section class="section" id="products">
 
   <div class="title">
 
-    <small data-en="OUR COLLECTION"
-           data-ur="ہماری کلیکشن">
-      OUR COLLECTION
+    <small>
+      REMOTEHUB COLLECTION
     </small>
 
-    <h2 data-en="All Remotes"
-        data-ur="تمام ریموٹس">
+    <h2>
       All Remotes
     </h2>
 
   </div>
 
-  <div class="product-tools">
 
-    <button class="filter-btn active"
-            onclick="showAll(this)"
-            data-en="All"
-            data-ur="تمام">
+  <div class="filters">
+
+    <button
+      class="filter-btn active"
+      onclick="showAllProducts(this)">
       All
-    </button>
-
-    <button class="filter-btn"
-            onclick="filterCategory('AC',this)">
-      AC
-    </button>
-
-    <button class="filter-btn"
-            onclick="filterCategory('TV',this)">
-      TV
-    </button>
-
-    <button class="filter-btn"
-            onclick="filterCategory('Android',this)">
-      Android Box
-    </button>
-
-    <button class="filter-btn"
-            onclick="filterCategory('Universal',this)"
-            data-en="Universal"
-            data-ur="یونیورسل">
-      Universal
     </button>
 
   </div>
 
-  <div class="products" id="productGrid">
-    Loading products...
+
+  <div id="productsGrid" class="products">
+
+    <div class="loading">
+      Loading products...
+    </div>
+
   </div>
 
 </section>
 
-<!-- FULL PRODUCT PAGE -->
-<div class="product-page"
-     id="productPage">
 
-  <div class="product-page-header">
+<!-- CONTACT -->
+<section class="section" id="contact">
 
-    <div class="logo">
-      Remote<span>hub</span>
+  <div class="contact-box">
+
+    <h2>
+      Need Help Finding a Remote?
+    </h2>
+
+    <p>
+      Send us your TV, AC or device model and we will help you find the
+      compatible remote.
+    </p>
+
+    <div class="contact-buttons">
+
+      <a
+        href="https://wa.me/923072335550"
+        target="_blank">
+        WhatsApp
+      </a>
+
+      <a
+        href="https://www.instagram.com/the_remote_hub?igsh=MTlpZThnNGFnaXIxeg=="
+        target="_blank">
+        Instagram
+      </a>
+
+      <a
+        href="https://www.facebook.com/share/1CNRKNpg5H/"
+        target="_blank">
+        Facebook
+      </a>
+
+      <!-- TIKTOK -->
+      <a
+        href="https://www.tiktok.com/@remote_hub0"
+        target="_blank">
+        TikTok
+      </a>
+
+      <a
+        href="https://maps.app.goo.gl/C5AiUd2NSUh5kTGy6?g_st=ac"
+        target="_blank">
+        Store Location
+      </a>
+
     </div>
-
-    <button class="back-btn"
-            onclick="closeProductPage()"
-            data-en="← Back to Products"
-            data-ur="← واپس پروڈکٹس">
-      ← Back to Products
-    </button>
 
   </div>
 
-  <div class="product-detail">
+</section>
 
-    <div class="detail-gallery"
-         id="detailGallery">
+
+<!-- FOOTER -->
+<footer>
+
+  © 2026 Remotehub. All Rights Reserved.
+
+</footer>
+
+
+
+<!-- PRODUCT DETAIL PAGE -->
+<div class="product-page" id="productPage">
+
+  <div class="detail-header">
+
+    <button
+      class="back-btn"
+      onclick="closeProductPage()">
+      ← Back
+    </button>
+
+    <div class="detail-header-title">
+      Remotehub
     </div>
 
+  </div>
+
+
+  <div class="detail-container">
+
+    <!-- GALLERY -->
+    <div class="detail-gallery">
+
+      <div
+        class="detail-image-box"
+        id="detailImageBox">
+
+        <img
+          id="detailMainImage"
+          class="detail-main-image"
+          draggable="false"
+          src=""
+          alt="Remote">
+
+        <div class="zoom-controls">
+
+          <button onclick="zoomIn()">+</button>
+
+          <button onclick="resetZoom()">↺</button>
+
+          <button onclick="zoomOut()">−</button>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="detail-thumbs"
+        id="detailThumbs">
+      </div>
+
+    </div>
+
+
+    <!-- INFO -->
     <div class="detail-info">
 
-      <div class="detail-category"
-           id="detailCategory">
+      <div
+        class="detail-category"
+        id="detailCategory">
       </div>
 
-      <h1 id="detailName"></h1>
+      <h1
+        class="detail-name"
+        id="detailName">
+      </h1>
 
-      <p class="detail-description"
-         id="detailDescription">
-      </p>
-
-      <div class="detail-price"
-           id="detailPrice">
+      <div
+        class="detail-description"
+        id="detailDescription">
       </div>
 
-      <div class="detail-delivery">
-
-        ⚡ <strong>Karachi:</strong> 1 Hour Delivery
-        <br>
-
-        🇵🇰 <strong>Pakistan:</strong> Delivery Available
-        <br>
-
-        💵 Cash on Delivery Available
-
+      <div
+        class="detail-price"
+        id="detailPrice">
       </div>
 
-      <a class="detail-order"
-         id="detailOrder"
-         href="#"
-         target="_blank">
-         💬 Order This Remote on WhatsApp
+      <a
+        id="detailOrder"
+        class="order-btn"
+        href="#"
+        target="_blank">
+        Order on WhatsApp
       </a>
 
     </div>
@@ -1166,160 +1014,75 @@ footer{
 
 </div>
 
-<!-- ABOUT -->
-<section class="section about"
-         id="about">
 
-  <div class="about-content">
-
-    <div class="title">
-
-      <small data-en="ABOUT REMOTE HUB"
-             data-ur="REMOTE HUB کے بارے میں">
-        ABOUT REMOTE HUB
-      </small>
-
-      <h2 data-en="Smart Remotes for Smarter Living"
-          data-ur="اسمارٹ ریموٹس، بہتر زندگی کے لیے">
-        Smart Remotes for Smarter Living
-      </h2>
-
-    </div>
-
-    <p data-en="Remote Hub provides quality replacement remotes for TVs, air conditioners, Android boxes and other smart devices."
-       data-ur="Remote Hub TV، air conditioners، Android boxes اور دیگر smart devices کے لیے معیاری replacement remotes فراہم کرتا ہے۔">
-      Remote Hub provides quality replacement remotes for TVs, air conditioners,
-      Android boxes and other smart devices.
-    </p>
-
-    <p data-en="We deliver across Pakistan, with fast 1-hour delivery available in Karachi."
-       data-ur="ہم پورے پاکستان میں ڈیلیوری کرتے ہیں، جبکہ کراچی میں تیز 1 گھنٹے کی ڈیلیوری دستیاب ہے۔">
-      We deliver across Pakistan, with fast 1-hour delivery available in Karachi.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="section"
-         id="contact">
-
-  <div class="title">
-
-    <small data-en="GET IN TOUCH"
-           data-ur="رابطہ کریں">
-      GET IN TOUCH
-    </small>
-
-    <h2 data-en="Contact Remote Hub"
-        data-ur="Remote Hub سے رابطہ کریں">
-      Contact Remote Hub
-    </h2>
-
-  </div>
-
-  <div class="contact">
-
-    <div class="contact-card">
-
-      <h3 data-en="Contact Information"
-          data-ur="رابطے کی معلومات">
-        Contact Information
-      </h3>
-
-      <a href="https://wa.me/923072335550"
-         target="_blank">
-        💬 WhatsApp: 0307 2335550
-      </a>
-
-      <a href="tel:03072335550">
-        📞 Call: 0307 2335550
-      </a>
-
-      <a href="https://maps.app.goo.gl/C5AiUd2NSUh5kTGy6?g_st=ac"
-         target="_blank">
-        📍 Visit Our Store
-      </a>
-
-      <div class="social">
-
-        <a href="https://www.instagram.com/the_remote_hub?igsh=MTlpZThnNGFnaXIxeg=="
-           target="_blank">
-          Instagram
-        </a>
-
-        <a href="https://www.facebook.com/share/1CNRKNpg5H/"
-           target="_blank">
-          Facebook
-        </a>
-
-      </div>
-
-    </div>
-
-    <div class="contact-card">
-
-      <h3 data-en="Need Help Finding a Remote?"
-          data-ur="ریموٹ تلاش کرنے میں مدد چاہیے؟">
-        Need Help Finding a Remote?
-      </h3>
-
-      <p style="color:#687385;line-height:1.7;"
-         data-en="Send us your TV or AC model number on WhatsApp. We can help you find the compatible remote."
-         data-ur="اپنے TV یا AC کا model number WhatsApp پر بھیجیں۔ ہم آپ کو compatible remote تلاش کرنے میں مدد کریں گے۔">
-        Send us your TV or AC model number on WhatsApp.
-        We can help you find the compatible remote.
-      </p>
-
-      <br>
-
-      <a class="whatsapp"
-         href="https://wa.me/923072335550?text=Assalam-o-Alaikum%2C%20mujhe%20remote%20find%20karne%20mein%20help%20chahiye."
-         target="_blank"
-         data-en="💬 Ask on WhatsApp"
-         data-ur="💬 WhatsApp پر پوچھیں">
-        💬 Ask on WhatsApp
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-  <p>© 2026 Remote Hub. All Rights Reserved.</p>
-
-  <p style="margin-top:8px;color:#9ca8b5;"
-     data-en="Smart Remotes for Smarter Living | Delivery Across Pakistan"
-     data-ur="اسمارٹ ریموٹس | پورے پاکستان میں ڈیلیوری">
-     Smart Remotes for Smarter Living | Delivery Across Pakistan
-  </p>
-
-</footer>
-
-<a class="float-whatsapp"
-   href="https://wa.me/923072335550"
-   target="_blank">
-   💬
-</a>
 
 <script>
 
 /* =========================================================
    GOOGLE SHEET
-   SAME SHEET - NO CHANGE
 ========================================================= */
 
-const sheetCsvUrl =
+const SHEET_URL =
 "https://docs.google.com/spreadsheets/d/1wEFesmyYm898huJec2X0LlWfq-fUqp4pOT7LoeyKQnQ/export?format=csv";
 
+
+/* =========================================================
+   GLOBAL VARIABLES
+========================================================= */
+
 let products = [];
-let currentLanguage = "en";
+
 let currentProduct = null;
+
+let savedProductsScroll = 0;
+
+let savedCategoryScroll = 0;
+
+let currentFilter = "all";
+
+let currentFilterType = "all";
+
+
+/* =========================================================
+   ZOOM VARIABLES
+========================================================= */
+
+let zoomLevel = 1;
+
+let zoomX = 0;
+
+let zoomY = 0;
+
+let zoomStartDistance = 0;
+
+let zoomStartLevel = 1;
+
+let isDragging = false;
+
+let dragStartX = 0;
+
+let dragStartY = 0;
+
+let dragOriginX = 0;
+
+let dragOriginY = 0;
+
+
+/* =========================================================
+   SEARCH NORMALIZATION
+========================================================= */
+
+function normalizeSearch(text){
+
+  return String(text || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^\p{L}\p{N}]+/gu," ")
+    .replace(/\s+/g," ")
+    .trim();
+
+}
 
 
 /* =========================================================
@@ -1328,80 +1091,132 @@ let currentProduct = null;
 
 function parseCSV(text){
 
-  let lines=[];
-  let row=[];
-  let current="";
-  let inQuotes=false;
+  const rows = [];
+
+  let row = [];
+
+  let value = "";
+
+  let insideQuotes = false;
+
 
   for(let i=0;i<text.length;i++){
 
-    let char=text[i];
-    let next=text[i+1];
+    const char = text[i];
+
+    const next = text[i+1];
+
+
+    if(char === '"' && insideQuotes && next === '"'){
+
+      value += '"';
+
+      i++;
+
+      continue;
+
+    }
+
 
     if(char === '"'){
 
-      if(inQuotes && next === '"'){
-        current+='"';
-        i++;
-      }else{
-        inQuotes=!inQuotes;
-      }
+      insideQuotes = !insideQuotes;
 
-    }else if(char === "," && !inQuotes){
+      continue;
 
-      row.push(current.trim());
-      current="";
+    }
 
-    }else if((char === "\r" || char === "\n") && !inQuotes){
+
+    if(char === "," && !insideQuotes){
+
+      row.push(value);
+
+      value = "";
+
+      continue;
+
+    }
+
+
+    if((char === "\n" || char === "\r") && !insideQuotes){
 
       if(char === "\r" && next === "\n"){
+
         i++;
+
       }
 
-      row.push(current.trim());
 
-      if(row.length>1 || row[0] !== ""){
-        lines.push(row);
+      row.push(value);
+
+      value = "";
+
+
+      if(row.some(cell => cell.trim() !== "")){
+
+        rows.push(row);
+
       }
 
-      row=[];
-      current="";
 
-    }else{
+      row = [];
 
-      current+=char;
+      continue;
+
+    }
+
+
+    value += char;
+
+  }
+
+
+  if(value !== "" || row.length){
+
+    row.push(value);
+
+    if(row.some(cell => cell.trim() !== "")){
+
+      rows.push(row);
 
     }
 
   }
 
-  if(current || row.length>0){
 
-    row.push(current.trim());
-    lines.push(row);
+  return rows;
 
-  }
-
-  return lines;
 }
 
 
 /* =========================================================
-   ESCAPE HTML
+   FIND COLUMN
 ========================================================= */
 
-function escapeHTML(text){
+function findColumn(headers,names){
 
-  if(text===null || text===undefined){
-    return "";
+  const normalizedHeaders =
+    headers.map(h => normalizeSearch(h));
+
+
+  for(const name of names){
+
+    const index =
+      normalizedHeaders.indexOf(
+        normalizeSearch(name)
+      );
+
+
+    if(index !== -1){
+
+      return index;
+
+    }
+
   }
 
-  return String(text)
-  .replace(/&/g,"&amp;")
-  .replace(/</g,"&lt;")
-  .replace(/>/g,"&gt;")
-  .replace(/"/g,"&quot;")
-  .replace(/'/g,"&#039;");
+
+  return -1;
 
 }
 
@@ -1410,126 +1225,262 @@ function escapeHTML(text){
    LOAD PRODUCTS
 ========================================================= */
 
-function fetchProductsFromSheet(){
+async function loadProducts(){
 
-  fetch(sheetCsvUrl)
+  const grid =
+    document.getElementById("productsGrid");
 
-  .then(response=>{
+
+  try{
+
+    const response =
+      await fetch(
+        SHEET_URL + "&t=" + Date.now()
+      );
+
 
     if(!response.ok){
-      throw new Error("Sheet not loaded");
-    }
 
-    return response.text();
-
-  })
-
-  .then(data=>{
-
-    const rows=parseCSV(data);
-
-    if(rows.length<2){
-
-      document.getElementById("productGrid").innerHTML=
-      "<div class='no-results'>No products found.</div>";
-
-      return;
-    }
-
-    const headers=rows[0].map(h =>
-      h.toLowerCase().trim()
-    );
-
-    const nameIdx=headers.findIndex(h =>
-      h.includes("product name") ||
-      h.includes("title") ||
-      h==="name"
-    );
-
-    const catIdx=headers.findIndex(h =>
-      h.includes("category")
-    );
-
-    const priceIdx=headers.findIndex(h =>
-      h.includes("price")
-    );
-
-    const descIdx=headers.findIndex(h =>
-      h.includes("description")
-    );
-
-    const img1Idx=headers.findIndex(h =>
-      h==="image url" ||
-      h==="image" ||
-      h==="image 1" ||
-      h==="image url 1"
-    );
-
-    const img2Idx=headers.findIndex(h =>
-      h.includes("image url 2") ||
-      h.includes("image 2")
-    );
-
-    const img3Idx=headers.findIndex(h =>
-      h.includes("image url 3") ||
-      h.includes("image 3")
-    );
-
-    products=[];
-
-    for(let i=1;i<rows.length;i++){
-
-      const row=rows[i];
-
-      if(nameIdx===-1 || !row[nameIdx]){
-        continue;
-      }
-
-      let images=[];
-
-      if(img1Idx!==-1 && row[img1Idx]){
-        images.push(row[img1Idx]);
-      }
-
-      if(img2Idx!==-1 && row[img2Idx]){
-        images.push(row[img2Idx]);
-      }
-
-      if(img3Idx!==-1 && row[img3Idx]){
-        images.push(row[img3Idx]);
-      }
-
-      products.push({
-
-        name:row[nameIdx] || "",
-
-        category:
-        catIdx!==-1 ? row[catIdx] || "" : "",
-
-        price:
-        priceIdx!==-1 ? row[priceIdx] || "" : "",
-
-        description:
-        descIdx!==-1 ? row[descIdx] || "" : "",
-
-        images:images
-
-      });
+      throw new Error("Unable to load sheet");
 
     }
+
+
+    const csv =
+      await response.text();
+
+
+    const rows =
+      parseCSV(csv);
+
+
+    if(rows.length < 2){
+
+      throw new Error("No products found");
+
+    }
+
+
+    const headers =
+      rows[0];
+
+
+    const nameCol =
+      findColumn(headers,[
+        "Product Name",
+        "Product",
+        "Name",
+        "Title"
+      ]);
+
+
+    const categoryCol =
+      findColumn(headers,[
+        "Category",
+        "Type"
+      ]);
+
+
+    const priceCol =
+      findColumn(headers,[
+        "Price",
+        "Product Price"
+      ]);
+
+
+    const descriptionCol =
+      findColumn(headers,[
+        "Description",
+        "Details"
+      ]);
+
+
+    const imageColumns = [];
+
+
+    headers.forEach((header,index)=>{
+
+      const h =
+        normalizeSearch(header);
+
+
+      if(
+        h.includes("image") ||
+        h.includes("photo") ||
+        h.includes("picture")
+      ){
+
+        imageColumns.push(index);
+
+      }
+
+    });
+
+
+    products =
+      rows
+      .slice(1)
+      .map((row,rowIndex)=>{
+
+        const name =
+          nameCol >= 0
+          ? (row[nameCol] || "").trim()
+          : "";
+
+
+        const category =
+          categoryCol >= 0
+          ? (row[categoryCol] || "").trim()
+          : "";
+
+
+        const price =
+          priceCol >= 0
+          ? (row[priceCol] || "").trim()
+          : "";
+
+
+        const description =
+          descriptionCol >= 0
+          ? (row[descriptionCol] || "").trim()
+          : "";
+
+
+        const images =
+          imageColumns
+          .map(index => (row[index] || "").trim())
+          .filter(url => url);
+
+
+        return{
+
+          _id:
+            "remote-" +
+            rowIndex +
+            "-" +
+            Math.random()
+              .toString(36)
+              .slice(2,8),
+
+          name,
+
+          category,
+
+          price,
+
+          description,
+
+          images
+
+        };
+
+      })
+      .filter(product => product.name);
+
 
     renderProducts(products);
 
-  })
-
-  .catch(error=>{
+  }
+  catch(error){
 
     console.error(error);
 
-    document.getElementById("productGrid").innerHTML=
-    "<div class='no-results'>Products load nahi ho rahe. Google Sheet sharing check karein.</div>";
+    grid.innerHTML = `
+      <div class="empty">
+        Unable to load products right now.
+        Please try again later.
+      </div>
+    `;
 
-  });
+  }
+
+}
+
+
+/* =========================================================
+   BRAND DETECTION
+========================================================= */
+
+function detectBrand(text){
+
+  const brands = [
+    "Samsung",
+    "TCL",
+    "Haier",
+    "Multynet",
+    "Sony",
+    "LG",
+    "Dawlance",
+    "Gree",
+    "Orient",
+    "Midea",
+    "Ecostar",
+    "Universal",
+    "Android"
+  ];
+
+
+  const normalized =
+    normalizeSearch(text);
+
+
+  for(const brand of brands){
+
+    if(
+      normalized.includes(
+        normalizeSearch(brand)
+      )
+    ){
+
+      return brand;
+
+    }
+
+  }
+
+
+  return "Remote";
+
+}
+
+
+/* =========================================================
+   PREMIUM DESCRIPTION
+========================================================= */
+
+function makePremiumDescription(product){
+
+  if(
+    product.description &&
+    product.description.trim()
+  ){
+
+    return product.description.trim();
+
+  }
+
+
+  const brand =
+    detectBrand(product.name);
+
+
+  return (
+    "Premium quality replacement remote designed " +
+    "for compatible " +
+    brand +
+    " devices.\n\n" +
+
+    "This remote is a practical replacement for " +
+    "your original remote and is designed for " +
+    "easy everyday operation.\n\n" +
+
+    "Before ordering, please compare the remote " +
+    "design and model with your existing remote. " +
+
+    "If you are unsure about compatibility, " +
+    "send us a picture of your current remote " +
+    "on WhatsApp and our team will help you."
+  );
 
 }
 
@@ -1538,334 +1489,314 @@ function fetchProductsFromSheet(){
    RENDER PRODUCTS
 ========================================================= */
 
-function renderProducts(list=products){
+function renderProducts(list){
 
-  const grid=document.getElementById("productGrid");
+  const grid =
+    document.getElementById("productsGrid");
 
-  grid.innerHTML="";
 
   if(!list.length){
 
-    grid.innerHTML=
-    "<div class='no-results'>No matching products found.</div>";
+    grid.innerHTML = `
+      <div class="empty">
+        <h3>No remote found</h3>
+        <p>
+          Try another model name or brand.
+        </p>
+      </div>
+    `;
 
     return;
+
   }
 
-  list.forEach((product,index)=>{
 
-    let imagesHTML="";
+  grid.innerHTML =
+    list.map(product => {
 
-    if(product.images.length){
+      const image =
+        product.images[0] ||
+        "https://via.placeholder.com/500x500?text=Remotehub";
 
-      product.images.forEach((img,i)=>{
 
-        imagesHTML+=`
-          <img
-            src="${escapeHTML(img)}"
-            class="card-img-${index} ${i===0 ? "active":""}"
-            alt="${escapeHTML(product.name)}"
-            draggable="false"
-            onerror="this.style.display='none';"
-          >
-        `;
+      const brand =
+        product.category ||
+        detectBrand(product.name);
 
-      });
 
-    }else{
+      return `
 
-      imagesHTML=`<div style="font-size:60px;">📺</div>`;
+        <div
+          class="product"
+          onclick="openProductPage('${product._id}')">
 
-    }
+          <div class="product-image">
 
-    grid.innerHTML+=`
+            <img
+              src="${escapeHTML(image)}"
+              alt="${escapeHTML(product.name)}"
+              loading="lazy"
+              onerror="this.src='https://via.placeholder.com/500x500?text=Remotehub'"
+            >
 
-      <div class="product"
-           onclick="openProductPage('${product._id}')">
+          </div>
 
-        <div class="product-image"
-             id="cardSlider-${product._id}">
 
-          ${imagesHTML}
+          <div class="product-info">
 
-          ${
-            product.images.length>1
-            ? `<div class="swipe-hint">← Swipe →</div>`
-            : ""
-          }
+            <div class="product-category">
+              ${escapeHTML(brand)}
+            </div>
 
-        </div>
+            <div class="product-name">
+              ${escapeHTML(product.name)}
+            </div>
 
-        <div class="product-info">
+            <div class="product-price">
+              Rs. ${escapeHTML(product.price)}
+            </div>
 
-          <h3>
-            ${escapeHTML(product.name)}
-          </h3>
+            <div class="view-product">
+              View Product
+            </div>
 
-          <p>
-            ${escapeHTML(
-              product.description ||
-              "Quality replacement remote."
-            )}
-          </p>
-
-          <div class="price">
-            Rs. ${escapeHTML(product.price)}
           </div>
 
         </div>
 
-      </div>
+      `;
 
-    `;
-
-    setupCardSwipe(
-      document.getElementById(
-        `cardSlider-${product._id}`
-      ),
-      product
-    );
-
-  });
+    }).join("");
 
 }
 
 
 /* =========================================================
-   GIVE PRODUCTS UNIQUE IDs
+   ESCAPE HTML
 ========================================================= */
 
-function prepareProducts(){
+function escapeHTML(value){
 
-  products.forEach((product,index)=>{
-
-    product._id =
-      "remote-" +
-      index +
-      "-" +
-      Date.now();
-
-  });
+  return String(value || "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
 /* =========================================================
-   CARD SWIPE
+   POWERFUL SEARCH
 ========================================================= */
-
-function setupCardSwipe(element,product){
-
-  if(!element || product.images.length<2){
-    return;
-  }
-
-  let startX=0;
-  let startY=0;
-  let current=0;
-
-  element.addEventListener("touchstart",e=>{
-
-    startX=e.touches[0].clientX;
-    startY=e.touches[0].clientY;
-
-  },{passive:true});
-
-  element.addEventListener("touchend",e=>{
-
-    let endX=e.changedTouches[0].clientX;
-    let endY=e.changedTouches[0].clientY;
-
-    let dx=endX-startX;
-    let dy=endY-startY;
-
-    if(
-      Math.abs(dx)>40 &&
-      Math.abs(dx)>Math.abs(dy)
-    ){
-
-      current += dx<0 ? 1 : -1;
-
-      if(current>=product.images.length){
-        current=0;
-      }
-
-      if(current<0){
-        current=product.images.length-1;
-      }
-
-      const imgs=
-        element.querySelectorAll("img");
-
-      imgs.forEach(img =>
-        img.classList.remove("active")
-      );
-
-      if(imgs[current]){
-        imgs[current].classList.add("active");
-      }
-
-    }
-
-  },{passive:true});
-
-}
-
-
-/* =========================================================
-   SEARCH - IMPROVED
-========================================================= */
-
-function normalizeSearch(text){
-
-  return String(text || "")
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}]+/gu," ")
-    .replace(/\s+/g," ")
-    .trim();
-
-}
-
 
 function searchProducts(){
 
-  const input=
+  const input =
     normalizeSearch(
       document.getElementById("searchInput").value
     );
 
+
   if(!input){
 
+    currentFilter = "all";
+
+    currentFilterType = "all";
+
     renderProducts(products);
+
     return;
+
   }
 
-  const words=input.split(" ");
 
-  const results=products.filter(product=>{
+  const words =
+    input.split(" ");
 
-    const searchable=
-      normalizeSearch(
-        product.name + " " +
-        product.category + " " +
-        product.description
+
+  const results =
+    products.filter(product => {
+
+      const searchable =
+        normalizeSearch(
+          product.name +
+          " " +
+          product.category +
+          " " +
+          product.description
+        );
+
+
+      return words.every(
+        word => searchable.includes(word)
       );
-
-    return words.every(word =>
-      searchable.includes(word)
-    );
-
-  });
-
-  renderProducts(results);
-
-}
-
-
-/* =========================================================
-   CATEGORY FILTER
-========================================================= */
-
-function filterCategory(category,btn){
-
-  const selected=
-    normalizeSearch(category);
-
-  const results=
-    products.filter(product=>{
-
-      const cat=
-        normalizeSearch(product.category);
-
-      return cat.includes(selected);
 
     });
 
+
   renderProducts(results);
-
-  document.querySelectorAll(".filter-btn")
-  .forEach(b =>
-    b.classList.remove("active")
-  );
-
-  if(btn){
-    btn.classList.add("active");
-  }
-
-  document.getElementById("products")
-  .scrollIntoView({
-    behavior:"smooth"
-  });
 
 }
 
 
 /* =========================================================
-   SHOW ALL
+   BRAND FILTER
 ========================================================= */
 
-function showAll(btn){
+function productHasBrand(product,brand){
 
-  document.getElementById("searchInput").value="";
+  const text =
+    normalizeSearch(
+      product.name +
+      " " +
+      product.category +
+      " " +
+      product.description
+    );
+
+
+  const target =
+    normalizeSearch(brand);
+
+
+  return text.includes(target);
+
+}
+
+
+function filterBrand(brand){
+
+  savedCategoryScroll =
+    window.scrollY;
+
+
+  currentFilter =
+    brand;
+
+
+  currentFilterType =
+    "brand";
+
+
+  const results =
+    products.filter(
+      product =>
+        productHasBrand(product,brand)
+    );
+
+
+  renderProducts(results);
+
+
+  document
+    .getElementById("products")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+}
+
+
+/* =========================================================
+   SHOW ALL PRODUCTS
+========================================================= */
+
+function showAllProducts(btn){
+
+  currentFilter = "all";
+
+  currentFilterType = "all";
+
+
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach(button =>
+      button.classList.remove("active")
+    );
+
+
+  if(btn){
+
+    btn.classList.add("active");
+
+  }
+
 
   renderProducts(products);
 
-  document.querySelectorAll(".filter-btn")
-  .forEach(b =>
-    b.classList.remove("active")
-  );
-
-  if(btn){
-    btn.classList.add("active");
-  }
-
 }
 
 
 /* =========================================================
-   OPEN FULL PRODUCT PAGE
+   OPEN PRODUCT DETAIL
 ========================================================= */
 
 function openProductPage(id){
 
-  const product=
-    products.find(p => p._id===id);
+  savedProductsScroll =
+    window.scrollY;
+
+
+  const product =
+    products.find(
+      p => p._id === id
+    );
+
 
   if(!product){
+
     return;
+
   }
 
-  currentProduct=product;
 
-  document.getElementById("detailCategory")
-    .textContent=
-    product.category || "Remote";
+  currentProduct =
+    product;
 
-  document.getElementById("detailName")
-    .textContent=
+
+  document.getElementById(
+    "detailCategory"
+  ).textContent =
+    product.category ||
+    detectBrand(product.name) ||
+    "Remote";
+
+
+  document.getElementById(
+    "detailName"
+  ).textContent =
     product.name;
 
-  document.getElementById("detailDescription")
-    .textContent=
-    product.description ||
-    "Quality replacement remote.";
 
-  document.getElementById("detailPrice")
-    .textContent=
+  document.getElementById(
+    "detailDescription"
+  ).textContent =
+    makePremiumDescription(product);
+
+
+  document.getElementById(
+    "detailPrice"
+  ).textContent =
     "Rs. " + product.price;
+
 
   renderDetailGallery(product);
 
-  /*
-     WhatsApp message:
-     Product name + price + image link
-  */
 
-  let message=
+  let message =
     "Assalam-o-Alaikum,\n\n" +
+
     "Mujhe ye remote chahiye:\n" +
-    "Product: " + product.name + "\n" +
-    "Price: Rs. " + product.price;
+
+    "Product: " +
+    product.name +
+
+    "\nPrice: Rs. " +
+    product.price;
+
 
   if(product.images.length){
 
@@ -1875,124 +1806,33 @@ function openProductPage(id){
 
   }
 
+
   message +=
     "\n\nPlease order confirm kar dein.";
 
-  document.getElementById("detailOrder").href=
+
+  document.getElementById(
+    "detailOrder"
+  ).href =
     "https://wa.me/923072335550?text=" +
     encodeURIComponent(message);
 
-  document.getElementById("productPage")
+
+  document
+    .getElementById("productPage")
     .classList.add("show");
 
-  document.body.style.overflow="hidden";
 
-  window.scrollTo(0,0);
-
-}
+  document.body.style.overflow =
+    "hidden";
 
 
-/* =========================================================
-   DETAIL GALLERY
-========================================================= */
-
-function renderDetailGallery(product){
-
-  const gallery=
-    document.getElementById("detailGallery");
-
-  gallery.innerHTML="";
-
-  if(!product.images.length){
-
-    gallery.innerHTML=
-      "<div style='font-size:100px;'>📺</div>";
-
-    return;
-  }
-
-  product.images.forEach((img,i)=>{
-
-    gallery.innerHTML+=`
-
-      <img
-        src="${escapeHTML(img)}"
-        class="${i===0 ? "active":""}"
-        alt="${escapeHTML(product.name)}"
-        draggable="false"
-        onerror="this.style.display='none';"
-      >
-
-    `;
-
-  });
-
-  if(product.images.length>1){
-
-    gallery.innerHTML+=
-      `<div class="detail-swipe">
-        ← Swipe to see more images →
-      </div>`;
-
-    setupDetailSwipe(gallery,product);
-
-  }
-
-}
+  document
+    .getElementById("productPage")
+    .scrollTop = 0;
 
 
-/* =========================================================
-   DETAIL SWIPE
-========================================================= */
-
-function setupDetailSwipe(gallery,product){
-
-  let startX=0;
-  let startY=0;
-  let current=0;
-
-  gallery.addEventListener("touchstart",e=>{
-
-    startX=e.touches[0].clientX;
-    startY=e.touches[0].clientY;
-
-  },{passive:true});
-
-  gallery.addEventListener("touchend",e=>{
-
-    let endX=e.changedTouches[0].clientX;
-    let endY=e.changedTouches[0].clientY;
-
-    let dx=endX-startX;
-    let dy=endY-startY;
-
-    if(
-      Math.abs(dx)>40 &&
-      Math.abs(dx)>Math.abs(dy)
-    ){
-
-      current += dx<0 ? 1 : -1;
-
-      if(current>=product.images.length){
-        current=0;
-      }
-
-      if(current<0){
-        current=product.images.length-1;
-      }
-
-      const images=
-        gallery.querySelectorAll("img");
-
-      images.forEach(img =>
-        img.classList.remove("active")
-      );
-
-      images[current].classList.add("active");
-
-    }
-
-  },{passive:true});
+  resetZoom();
 
 }
 
@@ -2003,114 +1843,437 @@ function setupDetailSwipe(gallery,product){
 
 function closeProductPage(){
 
-  document.getElementById("productPage")
+  document
+    .getElementById("productPage")
     .classList.remove("show");
 
-  document.body.style.overflow="";
 
-  currentProduct=null;
+  document.body.style.overflow =
+    "";
+
+
+  currentProduct = null;
+
+
+  setTimeout(()=>{
+
+    window.scrollTo({
+      top:savedProductsScroll,
+      behavior:"auto"
+    });
+
+  },50);
 
 }
 
 
 /* =========================================================
-   LANGUAGE
+   DETAIL GALLERY
 ========================================================= */
 
-function setLanguage(language){
+function renderDetailGallery(product){
 
-  currentLanguage=language;
+  const main =
+    document.getElementById(
+      "detailMainImage"
+    );
 
-  document.documentElement.lang=
-    language==="ur" ? "ur" : "en";
 
-  document.querySelectorAll("[data-en]")
-  .forEach(element=>{
+  const thumbs =
+    document.getElementById(
+      "detailThumbs"
+    );
 
-    const text=
-      element.getAttribute(
-        language==="ur"
-        ? "data-ur"
-        : "data-en"
-      );
 
-    if(text!==null){
+  if(!product.images.length){
 
-      element.textContent=text;
+    main.src =
+      "https://via.placeholder.com/800x800?text=Remotehub";
 
-    }
 
-  });
+    thumbs.innerHTML = "";
 
-  const search=
-    document.getElementById("searchInput");
-
-  if(language==="ur"){
-
-    search.placeholder=
-      "ریموٹ، برانڈ یا ماڈل تلاش کریں...";
-
-    document.getElementById("deliveryText")
-      .innerHTML=
-      "🚚 <strong>کراچی:</strong> 1 گھنٹے کی ڈیلیوری | 🇵🇰 پورے پاکستان میں ڈیلیوری دستیاب";
-
-  }else{
-
-    search.placeholder=
-      "Search remote, brand or model...";
-
-    document.getElementById("deliveryText")
-      .innerHTML=
-      "🚚 <strong>Karachi:</strong> 1 Hour Delivery | 🇵🇰 All Pakistan Delivery Available";
+    return;
 
   }
 
+
+  main.src =
+    product.images[0];
+
+
+  thumbs.innerHTML =
+    product.images
+    .map((image,index)=>`
+
+      <div
+        class="detail-thumb ${index===0 ? "active" : ""}"
+        onclick="changeDetailImage(${index})">
+
+        <img
+          src="${escapeHTML(image)}"
+          alt="Product image"
+          onerror="this.style.display='none'"
+        >
+
+      </div>
+
+    `)
+    .join("");
+
 }
+
+
+function changeDetailImage(index){
+
+  if(
+    !currentProduct ||
+    !currentProduct.images[index]
+  ){
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    "detailMainImage"
+  ).src =
+    currentProduct.images[index];
+
+
+  document
+    .querySelectorAll(".detail-thumb")
+    .forEach((thumb,i)=>{
+
+      thumb.classList.toggle(
+        "active",
+        i === index
+      );
+
+    });
+
+
+  resetZoom();
+
+}
+
+
+/* =========================================================
+   ZOOM
+========================================================= */
+
+function applyZoom(){
+
+  const image =
+    document.getElementById(
+      "detailMainImage"
+    );
+
+
+  image.style.transform =
+    `translate(${zoomX}px, ${zoomY}px) scale(${zoomLevel})`;
+
+}
+
+
+function zoomIn(){
+
+  zoomLevel =
+    Math.min(
+      zoomLevel + 0.25,
+      4
+    );
+
+
+  applyZoom();
+
+}
+
+
+function zoomOut(){
+
+  zoomLevel =
+    Math.max(
+      zoomLevel - 0.25,
+      1
+    );
+
+
+  if(zoomLevel === 1){
+
+    zoomX = 0;
+
+    zoomY = 0;
+
+  }
+
+
+  applyZoom();
+
+}
+
+
+function resetZoom(){
+
+  zoomLevel = 1;
+
+  zoomX = 0;
+
+  zoomY = 0;
+
+  applyZoom();
+
+}
+
+
+/* =========================================================
+   TOUCH PINCH + DRAG
+========================================================= */
+
+const imageBox =
+  document.getElementById(
+    "detailImageBox"
+  );
+
+
+imageBox.addEventListener(
+  "touchstart",
+  function(event){
+
+    if(event.touches.length === 2){
+
+      zoomStartDistance =
+        getTouchDistance(event.touches[0],event.touches[1]);
+
+
+      zoomStartLevel =
+        zoomLevel;
+
+      return;
+
+    }
+
+
+    if(
+      event.touches.length === 1 &&
+      zoomLevel > 1
+    ){
+
+      isDragging = true;
+
+      dragStartX =
+        event.touches[0].clientX;
+
+      dragStartY =
+        event.touches[0].clientY;
+
+      dragOriginX =
+        zoomX;
+
+      dragOriginY =
+        zoomY;
+
+    }
+
+  },
+  {passive:false}
+);
+
+
+imageBox.addEventListener(
+  "touchmove",
+  function(event){
+
+    event.preventDefault();
+
+
+    if(event.touches.length === 2){
+
+      const distance =
+        getTouchDistance(
+          event.touches[0],
+          event.touches[1]
+        );
+
+
+      if(zoomStartDistance){
+
+        const scale =
+          distance /
+          zoomStartDistance;
+
+
+        zoomLevel =
+          Math.min(
+            Math.max(
+              zoomStartLevel * scale,
+              1
+            ),
+            4
+          );
+
+
+        if(zoomLevel === 1){
+
+          zoomX = 0;
+
+          zoomY = 0;
+
+        }
+
+
+        applyZoom();
+
+      }
+
+
+      return;
+
+    }
+
+
+    if(
+      event.touches.length === 1 &&
+      isDragging &&
+      zoomLevel > 1
+    ){
+
+      const currentX =
+        event.touches[0].clientX;
+
+      const currentY =
+        event.touches[0].clientY;
+
+
+      zoomX =
+        dragOriginX +
+        (currentX - dragStartX);
+
+
+      zoomY =
+        dragOriginY +
+        (currentY - dragStartY);
+
+
+      applyZoom();
+
+    }
+
+  },
+  {passive:false}
+);
+
+
+imageBox.addEventListener(
+  "touchend",
+  function(){
+
+    isDragging = false;
+
+    zoomStartDistance = 0;
+
+  }
+);
+
+
+function getTouchDistance(a,b){
+
+  const dx =
+    a.clientX - b.clientX;
+
+  const dy =
+    a.clientY - b.clientY;
+
+
+  return Math.sqrt(
+    dx * dx +
+    dy * dy
+  );
+
+}
+
+
+/* =========================================================
+   MOUSE DRAG WHEN ZOOMED
+========================================================= */
+
+imageBox.addEventListener(
+  "mousedown",
+  function(event){
+
+    if(zoomLevel <= 1){
+
+      return;
+
+    }
+
+
+    isDragging = true;
+
+    dragStartX =
+      event.clientX;
+
+    dragStartY =
+      event.clientY;
+
+    dragOriginX =
+      zoomX;
+
+    dragOriginY =
+      zoomY;
+
+  }
+);
+
+
+window.addEventListener(
+  "mousemove",
+  function(event){
+
+    if(
+      !isDragging ||
+      zoomLevel <= 1
+    ){
+
+      return;
+
+    }
+
+
+    zoomX =
+      dragOriginX +
+      (event.clientX - dragStartX);
+
+
+    zoomY =
+      dragOriginY +
+      (event.clientY - dragStartY);
+
+
+    applyZoom();
+
+  }
+);
+
+
+window.addEventListener(
+  "mouseup",
+  function(){
+
+    isDragging = false;
+
+  }
+);
 
 
 /* =========================================================
    START
 ========================================================= */
 
-fetchProductsFromSheet();
-
-
-/*
-   Products load hone ke baad IDs assign karne ke liye
-   renderProducts ko safely wrap kar rahe hain.
-*/
-
-const originalRenderProducts=renderProducts;
-
-renderProducts=function(list=products){
-
-  if(products.length){
-
-    products.forEach((product,index)=>{
-
-      if(!product._id){
-
-        product._id=
-          "remote-" +
-          index +
-          "-" +
-          Math.random()
-          .toString(36)
-          .substring(2,8);
-
-      }
-
-    });
-
-  }
-
-  originalRenderProducts(list);
-
-};
+loadProducts();
 
 </script>
 
 </body>
-  </html>
-
-
+    </html>
